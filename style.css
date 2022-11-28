@@ -4,6 +4,35 @@ body {
     background: #F6F6FA;
 }
 
+.row {
+    display: flex;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.h2 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+}
+
+.h3 {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.bw {
+    filter: grayscale(100%); 
+}
+
+.bw-text {
+    color: #A0A0A4;
+}
+
 .all {
     position: relative;
     height: 100vh;
@@ -112,7 +141,7 @@ input::-webkit-input-placeholder {
     margin-top: 7px;
 }
 
-.profile-btn img {
+.pointer {
     cursor: pointer;
 }
 
@@ -135,10 +164,6 @@ input::-webkit-input-placeholder {
     margin-top: 6px;
 }
 
-.cart-btn img {
-    cursor: pointer;
-}
-
 .base {
     border-radius: 24px 24px 0px 0px;
     display: flex;
@@ -146,10 +171,6 @@ input::-webkit-input-placeholder {
     margin: auto;
     background: #F6F6FA;
     flex-direction: column;
-}
-
-.wrapper {
-    display: flex;
 }
 
 .cart {
@@ -170,6 +191,7 @@ input::-webkit-input-placeholder {
 .list {
     list-style-type: none;
     padding-left: 0;
+    width: 100%;
 }
 
 .close-btn {
@@ -214,7 +236,7 @@ input::-webkit-input-placeholder {
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 32px;
     gap: 5%;
 }
 
@@ -224,17 +246,10 @@ input::-webkit-input-placeholder {
     width: 400px;
 }
 
-.left-names {
-    display: flex;
-    flex-direction: column;
-    margin-left: 16px;
-}
-
 .name {
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
-    color: #000000;
 }
 
 .name-prop {
@@ -284,22 +299,13 @@ input::-webkit-input-placeholder {
     width: 72px;
     height: 96px;
     margin-left: 12px;
+    margin-right: 16px;
 }
 
 .line {
     opacity: 0.3;
     margin-top: 16px;
     margin-bottom: 11px;
-}
-
-.right-content {
-    display: flex;
-    justify-content: space-between;
-}
-
-.right-left {
-    display: flex;
-    flex-direction: column;
 }
 
 .counter {
@@ -376,7 +382,7 @@ input::-webkit-input-placeholder {
     text-decoration: line-through underline dashed;
 }
 
-.order {
+.order-wrapper {
     background: #FFFFFF;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15), 0px 0px 1px rgba(0, 0, 0, 0.3);
     border-radius: 16px;
@@ -385,14 +391,9 @@ input::-webkit-input-placeholder {
     padding: 16px 24px 24px;
     margin-top: 22px;
     margin-right: 24px;
-    justify-content: space-between;
     width: 386px;
-    height: 572px;
-}
-
-.up {
-    display: flex;
-    flex-direction: column;
+    height: 100%;
+    gap: 24px;
 }
 
 .up-item {
@@ -411,15 +412,6 @@ input::-webkit-input-placeholder {
     font-size: 24px;
     line-height: 32px;
     margin-bottom: 8px;
-}
-
-.up-1 {
-    display: flex;
-    flex-direction: column;
-}
-
-.up-1 span {
-    white-space: nowrap;
 }
 
 .up-11 {
@@ -455,7 +447,7 @@ input::-webkit-input-placeholder {
     color: #CB11AB;
 }
 
-.middle {
+.delivery-free {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -464,6 +456,7 @@ input::-webkit-input-placeholder {
     isolation: isolate;
     background: #F6F6FA;
     border-radius: 8px;
+    margin-top: 12px;
 }
 
 .free {
@@ -478,11 +471,6 @@ input::-webkit-input-placeholder {
     font-weight: 400;
     font-size: 13px;
     line-height: 123%;
-}
-
-.middle-1 {
-    display: flex;
-    flex-direction: column;
 }
 
 .middle-11 {
@@ -511,7 +499,8 @@ input::-webkit-input-placeholder {
     padding: 8px 8px 12px;
     gap: 8px;
     background: #F6F6FA;
-    border-radius: 8px;    
+    border-radius: 8px; 
+    margin-top: 13px;   
 }
 
 .middle-13 span {
@@ -563,10 +552,12 @@ input::-webkit-input-placeholder {
     margin-right: 8px;
 }
 
-.wrapper-missing {
-    height: 200px;
-    width: 1030px;
-    margin-left: 24px;
-    display: flex;
-    justify-content: space-between;
+.out-of-stock-btn {
+    margin-right: 160px;
+}
+
+.mir {
+    padding: 1px;
+    justify-content: center;
+align-items: center;
 }

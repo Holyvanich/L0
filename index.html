@@ -19,18 +19,18 @@
                 <button class="lupa"/>
             </div>  
             <div class="menu">
-                <div class="profile-btn">
+                <div class="profile-btn pointer">
                     <img src="img/Exclude.svg">
                     <span>Профиль</span>
                 </div>
-                <div class="cart-btn">
+                <div class="cart-btn pointer">
                     <img src="img/cart.svg">
                     <span>Корзина</span>
                 </div>
             </div>
         </div>
 <div class="base">
-        <div class="wrapper">
+        <div class="row">
             <div class="cart">
                 <span class="cart-label">Корзина</span>
                 <ul class="list">
@@ -49,7 +49,7 @@
                                 <input type="checkbox">
                                 <img src="img/1.png" class="tovar">
                             </div>
-                            <div class="left-names">
+                            <div class="column">
                                 <span class="name">Футболка UZcotton мужская</span>
                                 <div class="props">
                                     <span class="name-prop">Цвет: белый</span>
@@ -62,8 +62,8 @@
                                 </div>
                             </div>    
                         </div>
-                        <div class="right-content">
-                            <div class="right-left">
+                        <div class="row">
+                            <div class="column">
                                 <div class="counter">
                                     <button class="left"><span class="minus">-</span></button>
                                     <span class="counter-num">1</span>
@@ -87,7 +87,7 @@
                                 <input type="checkbox">
                                 <img src="img/2.png" class="tovar">
                             </div>
-                            <div class="left-names">
+                            <div class="column">
                                 <span class="name">Силиконовый чехол картхолдер (отверстия) для карт, 
                                                    прозрачный кейс бампер на Apple iPhone XR,
                                                    MobiSafe</span>
@@ -102,8 +102,8 @@
                             </div>    
                         </div>
                         
-                        <div class="right-content">
-                            <div class="right-left">
+                        <div class="row">
+                            <div class="column">
                                 <div class="counter">
                                     <button class="left"><span class="minus">-</span></button>
                                     <span class="counter-num">1</span>
@@ -126,7 +126,7 @@
                                 <input type="checkbox">
                                 <img src="img/3.png" class="tovar">
                             </div>
-                            <div class="left-names">
+                            <div class="column">
                                 <span class="name">Карандаши цветные Faber-Castell "Замок", 
                                                    набор 24 цвета, заточенные, 
                                                    шестигранные, Faber-Castell </span>
@@ -137,8 +137,8 @@
                                 </div>
                             </div>    
                         </div>
-                        <div class="right-content">
-                            <div class="right-left">
+                        <div class="row">
+                            <div class="column">
                                 <div class="counter">
                                     <button class="left"><span class="minus">-</span></button>
                                     <span class="counter-num">1</span>
@@ -157,9 +157,85 @@
                         </div>
                     </li>
                 </ul>
+                <ul class="list">
+                    <li>
+                        <div class="one">
+                            <span>Отсутствуют · 3 товара</span>
+                            <button class="close-btn"/>
+                        </div>
+                    </li>
+                    <hr class="line">
+                    <li class="item">
+                        <div class="left-content">
+                            <div class="img-checkbox">
+                                <img src="img/1.png" class="tovar bw">
+                            </div>
+                            <div class="column">
+                                <span class="name bw-text">Футболка UZcotton мужская</span>
+                                <div class="props">
+                                    <span class="name-prop bw-text">Цвет: белый</span>
+                                    <span class="name-prop color-prop bw-text">Размер: 56</span>
+                                </div>
+                            </div>    
+                        </div>
+                        <div class="row">
+                            <div class="column out-of-stock-btn">
+                                <div class="icons">
+                                    <button class="like"/>
+                                    <button class="trash"/>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="left-content">
+                            <div class="img-checkbox">
+                                <img src="img/2.png" class="tovar bw">
+                            </div>
+                            <div class="column">
+                                <span class="name bw-text">Силиконовый чехол картхолдер (отверстия) для карт, 
+                                    прозрачный кейс бампер на Apple iPhone XR,
+                                    MobiSafe</span>
+                                <div class="props">
+                                    <span class="name-prop bw-text">Цвет: прозрачный</span>
+                                </div>
+                            </div>    
+                        </div>
+                        <div class="row">
+                            <div class="column out-of-stock-btn">
+                                <div class="icons">
+                                    <button class="like"/>
+                                    <button class="trash"/>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="left-content">
+                            <div class="img-checkbox">
+                                <img src="img/3.png" class="tovar bw">
+                            </div>
+                            <div class="column">
+                                <span class="name bw-text">Карандаши цветные Faber-Castell "Замок", 
+                                    набор 24 цвета, заточенные, 
+                                    шестигранные, Faber-Castell</span>
+                            </div>    
+                        </div>
+                        <div class="row">
+                            <div class="column out-of-stock-btn">
+                                <div class="icons">
+                                    <button class="like"/>
+                                    <button class="trash"/>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
             </div>
-            <div class="order">
-                <div class="up">
+
+
+            <div class="order-wrapper">
+                <div class="column">
                     <div class="up-item primary">
                         <span class="itog">Итого</span>
                         <span class="itog-num">2 101 063 сом</span>
@@ -177,7 +253,7 @@
                         <span>Бесплатно</span>
                     </div>
                 </div>
-                <div class="up-1">
+                <div class="column">
                     <div class="up-11">
                         <span class="label-delivery">Доствка в пункт выдачи</span>
                         <button class="edit"/>
@@ -188,23 +264,22 @@
                     <div class="up-11">
                         <span class="time-delivery">5–8 фев</span>
                     </div>
+                    <div class="delivery-free">
+                        <img src="img/price shipping.png">
+                        <span class="free-text">Обратная доставка товаров на склад при отказе —
+                            <span class="free">бесплатно</span>
+                        </span>
+                    </div>
                 </div>
-                <div class="middle">
-                    <img src="img/price shipping.png">
-                    <span class="free-text">Обратная доставка товаров на склад при отказе —
-                        <span class="free">бесплатно</span>
-                    </span>
-                </div>
-                <div class="middle-1">
+                
+                <div class="column">
                     <div class="middle-11">
                         <span class="label-delivery">Оплата картой</span>
                         <button class="edit"/>
                     </div>
                     <div class="middle-12">
                         <div class="mir">
-                            <img class="letter" src="img/M.svg">
-                            <img class="letter" src="img/I.svg">
-                            <img class="letter" src="img/R.svg">
+                            <img src="img/mir.svg">
                         </div>
                         <span class="card">1234 12•• •••• 1234</span>
                     </div>
@@ -229,13 +304,7 @@
                 </div>
             </div>
         </div>
-        <div class="wrapper-missing">
-            <div class="one-left">
-                <span>Отсутствуют · 3 товара</span>
-            </div>
-            <button class="close-btn"></button>
-            <hr class="line">
-        </div>
+        
     </div>
     </div>
 </body>
