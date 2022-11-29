@@ -52,6 +52,10 @@ body {
     gap: 8px;
 }
 
+.gap24 {
+    gap: 24px;
+}
+
 .bw {
     filter: grayscale(100%); 
 }
@@ -129,7 +133,7 @@ body {
     align-items: flex-end;
 }
 
-input::-webkit-input-placeholder {
+.search-form::-webkit-input-placeholder {
     font-family: 'Segoe UI';
     font-style: normal;
     font-weight: 400;
@@ -137,7 +141,14 @@ input::-webkit-input-placeholder {
     line-height: 24px;
     color: #FFFFFF;
     opacity: 0.5;
- }
+}
+
+.input-data::-webkit-input-placeholder {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #A0A0A4;
+}
 
 .menu {
     display: flex;
@@ -268,7 +279,7 @@ input::-webkit-input-placeholder {
     width: 400px;
 }
 
-.name {
+.name-item {
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
@@ -612,6 +623,7 @@ align-items: center;
     display: flex;
     flex-direction: column;
     gap: 16px;
+    margin-bottom: 26px;
 }
 
 .footer {
@@ -621,7 +633,7 @@ align-items: center;
     align-items:center;
     display: flex;
     justify-content: space-around;
-    
+    background: #6725A8;
 }
 
 .copyright {
@@ -629,4 +641,50 @@ align-items: center;
     font-size: 13px;
     line-height: 123%;
     color: rgba(255, 255, 255, 0.7);
+}
+
+.input-data {
+    color: #A0A0A4;
+    border:0;
+    border-bottom:1px solid rgba(0, 0, 0, 0.2);;
+    outline: none;
+}
+
+.name {
+    flex-grow: 2;
+}
+
+.surname {
+    flex-grow: 2;
+}
+
+.email {
+    flex-grow: 2;
+}
+
+.phone-div {
+    flex-grow: 2;
+}
+
+.phone {
+    margin-top: 9px;
+    /* Исправить */
+}
+
+.inn-div {
+    height: 44px;
+    flex-grow: 2;
+    /* Исправить */
+}
+
+.INN {
+    margin-top: 25px;
+    /* Исправить */
+}
+
+.INN-label {
+    margin-top: 4px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
 }
