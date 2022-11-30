@@ -235,7 +235,7 @@
                     <div class="gray-wrapper">
                         <div class="row center space">
                             <span class="delivry-label">Способ доставки</span>
-                            <a href="#openModal" class="edit-delivery">Изменить</a>
+                            <a href="#openEditDelivery" class="edit-delivery">Изменить</a>
                         </div>
                         <div class="row">
                             <span class="width-delivery h3">Пункт выдачи</span>
@@ -272,7 +272,7 @@
                     <div class="gray-wrapper">
                         <div class="row center space">
                             <span class="delivry-label">Способ оплаты</span>
-                            <a class="edit-delivery">Изменить</a>
+                            <a href="#openEditPayment" class="edit-delivery">Изменить</a>
                         </div>
                         <div class="column gap8">
                             <div class="row">
@@ -288,7 +288,7 @@
                         </div>
                     </div>
                     <div class="gray-wrapper">
-                        <span class="h2">Получатель</span>
+                        <span class="h1">Получатель</span>
                         <div class="row space gap24">
                             <input type="text" placeholder="Имя" class="name input-data" >
                             <input type="text" class="surname input-data"placeholder="Фамилия">
@@ -383,7 +383,7 @@
         <span class="copyright">© 2022  ООО «Товары и точка»</span>
     </div>
 
-    <div id="openModal" class="modal">
+    <div id="openEditPayment" class="modal">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -392,41 +392,49 @@
             </div>
             <div class="modal-body">  
                 <form class="column gap8">
-                    <div class="row center">
-                        <input type="radio" name="card" id="mir" class="radio">
-                        <label for="mir" class="row">
-                            <div class="mir">
-                                <img src="img/mir.svg">
-                            </div>
-                            <span class="h4">1234 12•• •••• 1234</span>
-                        </label>
+                      <div class="row center">
+                        <div class="form-radio">
+                            <input type="radio" name="card" id="mir" class="radio" checked>
+                            <label for="mir">
+                                <div class="mir">
+                                    <img src="img/mir.svg">
+                                </div>
+                                <span class="h4">1234 12•• •••• 1234</span>
+                            </label>
+                        </div>
                       </div>
                       <div class="row center">
-                        <input type="radio" name="card" id="visa" class="radio">
-                        <label for="visa" class="row">
-                            <div class="mir">
-                                <img src="img/visa.svg">
-                            </div>
-                            <span class="h4">1234 12•• •••• 1234</span>
-                        </label>
+                        <div class="form-radio">
+                            <input type="radio" name="card" id="visa" class="radio" checked>
+                            <label for="visa">
+                                <div class="mir">
+                                    <img src="img/visa.svg">
+                                </div>
+                                <span class="h4">1234 12•• •••• 1234</span>
+                            </label>
+                        </div>
                       </div>
                       <div class="row center">
-                        <input type="radio" name="card" id="mastercard" class="radio">
-                        <label for="mastercard" class="row">
-                            <div class="mir">
-                                <img src="img/mastercard.svg">
-                            </div>
-                            <span class="h4">1234 12•• •••• 1234</span>
-                        </label>
+                        <div class="form-radio">
+                            <input type="radio" name="card" id="mastercard" class="radio" checked>
+                            <label for="mastercard">
+                                <div class="mir">
+                                    <img src="img/mastercard.svg">
+                                </div>
+                                <span class="h4">1234 12•• •••• 1234</span>
+                            </label>
+                        </div>
                       </div>
                       <div class="row center">
-                        <input type="radio" name="card" id="maestro" class="radio">
-                        <label for="maestro" class="row">
-                            <div class="mir">
-                                <img src="img/maestro.svg">
-                            </div>
-                            <span class="h4">1234 12•• •••• 1234</span>
-                        </label>
+                        <div class="form-radio">
+                            <input type="radio" name="card" id="maestro" class="radio" checked>
+                            <label for="maestro">
+                                <div class="mir">
+                                    <img src="img/maestro.svg">
+                                </div>
+                                <span class="h4">1234 12•• •••• 1234</span>
+                            </label>
+                        </div>
                       </div>
                     </form>  
                     <button type="submit" class="card-submit">
@@ -436,7 +444,51 @@
             </div>
           </div>
         </div>
-      </div>
+    </div>
+
+    <div id="openEditDelivery" class="modal">
+        <div class="modal-dialog modal-delivery">
+          <div class="modal-content">
+            <div class="modal-header">
+              <span class="modal-title h2">Способ выдачи</span>
+              <a href="#close" title="Close" class="close"><img src="img/cross.svg" alt=""></a>
+            </div>
+            <div class="modal-body">
+                <div class="row gap8">
+                    <button class="pickpoint-btn">В пункт выдачи</button>
+                    <button class="pickpoint-btn selected">Курьером</button>
+                </div>
+                <span class="adresses-label">Мои адреса</span>
+                <form class="column gap20">
+                    <div class="row space center">
+                        <div class="form-radio">
+                            <input id="radio-11" type="radio" name="adress" checked>
+                            <label class="h4" for="radio-11">Бишкек, улица Табышалиева, 57</label>
+                        </div>
+                        <img src="img/trash-gray.svg" class="trash-gray"></img>
+                    </div>
+                    <div class="row space center">
+                        <div class="form-radio">
+                            <input id="radio-12" type="radio" name="adress">
+                            <label for="radio-12" class="h4">Бишкек, улица Жукеева-Пудовкина, 77/1</label>
+                        </div>
+                        <img src="img/trash-gray.svg" class="trash-gray"></img>
+                    </div>
+                    <div class="row space center">
+                        <div class="form-radio">
+                            <input id="radio-13" type="radio" name="adress">
+                            <label for="radio-13" class="h4">Бишкек, микрорайон Джал, улица Ахунбаева Исы, 67/1</label>
+                        </div>
+                        <img src="img/trash-gray.svg" class="trash-gray"></img>
+                    </div>
+                    <button type="submit" class="card-submit">
+                        <span class="submit-text">Выбрать</span>
+                    </button>
+                </form>  
+            </div>
+          </div>
+        </div>
+    </div>
 
     </div>
 </body>

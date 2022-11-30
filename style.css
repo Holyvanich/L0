@@ -24,10 +24,16 @@ body {
     flex-direction: column;
 }
 
-.h2 {
+.h1 {
     font-weight: 700;
     font-size: 24px;
     line-height: 32px;
+}
+
+.h2 {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 28px;
 }
 
 .h3 {
@@ -50,6 +56,10 @@ body {
 
 .gap8 {
     gap: 8px;
+}
+
+.gap20 {
+    gap: 20px;
 }
 
 .gap24 {
@@ -610,6 +620,7 @@ body {
     line-height: 150%;
     color: #CB11AB;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .delivry-label {
@@ -728,28 +739,27 @@ body {
 }
 
 .modal {
-    position: fixed; /* фиксированное положение */
+    position: fixed; 
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    background: rgba(0,0,0,0.5); /* цвет фона */
+    background: rgba(0,0,0,0.5);
     z-index: 1050;
-    opacity: 0; /* по умолчанию модальное окно прозрачно */
+    opacity: 0;
     -webkit-transition: opacity 200ms ease-in; 
     -moz-transition: opacity 200ms ease-in;
-    transition: opacity 200ms ease-in; /* анимация перехода */
-    pointer-events: none; /* элемент невидим для событий мыши */
+    transition: opacity 200ms ease-in;
+    pointer-events: none; 
     margin: 0;
     padding: 0;
 }
-/* при отображении модального окно */
+
 .modal:target {
-    opacity: 1; /* делаем окно видимым */
-	  pointer-events: auto; /* элемент видим для событий мыши */
-    overflow-y: auto; /* добавляем прокрутку по y, когда элемент не помещается на страницу */
+    opacity: 1; 
+	  pointer-events: auto;
 }
-/* ширина модального окна и его отступы от экрана */
+
 .modal-dialog {
     position: relative;
     width: auto;
@@ -761,10 +771,9 @@ body {
       max-width: 400px;
       margin: 170px auto; 
       /* Исправить */
-      /* для отображения модального окна по центру */
   }
 }
-/* свойства для блока, содержащего контент модального окна */ 
+
 .modal-content {
     position: relative;
     display: -webkit-box;
@@ -784,6 +793,7 @@ body {
     outline: 0;
     padding: 12px 24px 24px 24px;
 }
+
 @media (min-width: 768px) {
   .modal-content {
       -webkit-box-shadow: 0 5px 15px rgba(0,0,0,.5);
@@ -810,7 +820,7 @@ body {
     margin-top: 0;
     margin-bottom: 0;
 }
-/* свойства для кнопки "Закрыть" */
+
 .close {
     float: right;
     font-family: sans-serif;
@@ -822,14 +832,14 @@ body {
     opacity: .9;
     text-decoration: none;
 }
-/* свойства для кнопки "Закрыть" при нахождении её в фокусе или наведении */
+
 .close:focus, .close:hover {
     color: #000;
     text-decoration: none;
     cursor: pointer;
     opacity: .75;
 }
-/* свойства для блока, содержащего основное содержимое окна */
+
 .modal-body {
     position: relative;
     -webkit-box-flex: 1;
@@ -857,3 +867,75 @@ body {
     cursor: pointer;
     border: none;
 }
+
+.pickpoint-btn {
+    gap: 16px;
+    width: 224px;
+    height: 36px;
+    background: #FFFFFF;
+    border: 2px solid rgba(203, 17, 171, 0.15);
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 123%;
+}
+
+.selected {
+    border: 2px solid #CB11AB;
+}
+
+.modal-delivery {
+    max-width: 500px;
+}
+
+.adresses-label {
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 16px;
+    margin-top: 26px;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.trash-gray {
+    cursor: pointer;
+    margin-left: 10.5px;
+}
+
+.trash-gray:hover, .trash-gray:focus {
+    filter: invert(30%) sepia(100%) saturate(893%) hue-rotate(341deg) brightness(113%) contrast(103%);
+}
+
+.trash:hover, .trash:focus {
+    filter: invert(30%) sepia(100%) saturate(893%) hue-rotate(341deg) brightness(113%) contrast(103%);
+}
+
+.form-radio input[type=radio] {
+	display: none;
+}
+.form-radio label {
+	display: flex;
+	cursor: pointer;
+	position: relative;
+	padding-left: 25px;
+	margin-right: 0;
+	user-select: none;
+}
+.form-radio label:before {
+	content: "";
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	left: 0;
+	bottom: 2px;
+	background: url(/img/radio-1.svg) 0 0 no-repeat;
+}
+ 
+.form-radio input[type=radio]:checked + label:before {
+	background: url(/img/radio-2.svg) 0 0 no-repeat;
+    width: 20px;
+	height: 20px;
+}
+ 
