@@ -8,6 +8,9 @@
     <title>Document</title>
 </head>
 <body>
+
+    <script src="script.js"></script>
+
     <div class="all">
         <div class="header">
             <div class="nav">
@@ -37,7 +40,7 @@
                     <li>
                         <div class="one">
                             <div class="one-left">
-                                <input type="checkbox" class="checkbox" id="ok"><label for="ok">Выбрать все</label>
+                                <input type="checkbox" class="checkbox" id="ok" onchange="selectAll()"><label for="ok">Выбрать все</label>
                             </div>
                             <button class="close-btn"/>
                         </div>
@@ -46,7 +49,7 @@
                     <li class="item">
                         <div class="left-content">
                             <div class="row center">
-                                <input type="checkbox" class="checkbox" id="ok1">
+                                <input type="checkbox" class="checkbox" id="ok1" onchange="check1()">
                                 <label for="ok1"><img src="img/1.png" class="tovar"></label>
                             </div>
                             <div class="column">
@@ -73,8 +76,8 @@
                         <div class="row space">
                             <div class="column">
                                 <div class="counter">
-                                    <button class="left"><span class="minus">-</span></button>
-                                    <span class="counter-num">1</span>
+                                    <button class="left"><span class="minus">−</span></button>
+                                    <span class="counter-num h4">1</span>
                                     <button class="right"><span class="plus">+</span></button>
                                 </div>
                                 <span class="warning">Осталось 2 шт.</span>
@@ -104,7 +107,7 @@
                     <li class="item">
                         <div class="left-content">
                             <div class="row center">
-                                <input type="checkbox" class="checkbox" id="ok2">
+                                <input type="checkbox" class="checkbox" id="ok2" onchange="check2()">
                                 <label for="ok2"><img src="img/2.png" class="tovar"></label>
                             </div>
                             <div class="column">
@@ -133,8 +136,8 @@
                         <div class="row space">
                             <div class="column">
                                 <div class="counter">
-                                    <button class="left"><span class="minus">-</span></button>
-                                    <span class="counter-num">1</span>
+                                    <button class="left"><span class="minus">−</span></button>
+                                    <span class="counter-num h4">200</span>
                                     <button class="right"><span class="plus">+</span></button>
                                 </div>
                                 <div class="icons">
@@ -143,15 +146,27 @@
                                 </div>
                             </div>
                             <div class="price">
-                                <span class="discount-price">2 100 047 сом</span>
-                                <span class="original-price">2 300 047 сом</span>
+                                <span class="discount-price big-price">2 100 047 сом</span>
+                                <div class="hint">
+                                    <span class="original-price hover">2 300 047 сом</span>
+                                    <div class="hidden hidden-price ">
+                                        <div class="row space">
+                                            <span class="bw-text">Скидка 55%</span>
+                                            <span>−300 сом</span>
+                                        </div>
+                                        <div class="row space">
+                                            <span class="bw-text">Скидка покупателя 10%</span>
+                                            <span>−30 сом</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </li>
                     <li class="item">
                         <div class="left-content">
                             <div class="row center">
-                                <input type="checkbox" class="checkbox" id="ok3">
+                                <input type="checkbox" class="checkbox" id="ok3" onchange="check3()">
                                 <label for="ok3"><img src="img/3.png" class="tovar"></label>
                             </div>
                             <div class="column">
@@ -176,8 +191,8 @@
                         <div class="row space">
                             <div class="column">
                                 <div class="counter">
-                                    <button class="left"><span class="minus">-</span></button>
-                                    <span class="counter-num">1</span>
+                                    <button class="left"><span class="minus">−</span></button>
+                                    <span class="counter-num h4">2</span>
                                     <button class="right"><span class="plus">+</span></button>
                                 </div>
                                 <span class="warning">Осталось 2 шт.</span>
@@ -188,7 +203,19 @@
                             </div>
                             <div class="price">
                                 <span class="discount-price">494 сом</span>
-                                <span class="original-price">950 сом</span>
+                                <div class="hint">
+                                    <span class="original-price hover">950 сом</span>
+                                    <div class="hidden hidden-price ">
+                                        <div class="row space">
+                                            <span class="bw-text">Скидка 55%</span>
+                                            <span>−300 сом</span>
+                                        </div>
+                                        <div class="row space">
+                                            <span class="bw-text">Скидка покупателя 10%</span>
+                                            <span>−30 сом</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </li>
@@ -270,7 +297,7 @@
                 <div class="wrappers">
                     <div class="gray-wrapper">
                         <div class="row center space">
-                            <span class="delivry-label">Способ доставки</span>
+                            <span class="delivery-label">Способ доставки</span>
                             <a href="#openEditDelivery" class="edit-delivery">Изменить</a>
                         </div>
                         <div class="row">
@@ -301,7 +328,11 @@
                         <div class="row center">
                             <img style="margin-right: 9px;" src="img/price shipping.png">
                             <span class="free-text">Обратная доставка товаров на склад при отказе —
-                                <span class="free">бесплатно</span>
+                                <span class="free hover">бесплатно</span>
+                                <div class="hidden hidden-free">
+                                    <span>Если товары вам не подойдут, 
+                                        мы вернем их обратно на склад — это бесплатно</span>
+                                </div>
                             </span>
                         </div>
                     </div>
@@ -378,7 +409,11 @@
                     <div class="delivery-free">
                         <img src="img/price shipping.png">
                         <span class="free-text">Обратная доставка товаров на склад при отказе —
-                            <span class="free">бесплатно</span>
+                            <span class="free hover">бесплатно</span>
+                                <div class="hidden hidden-free-cart">
+                                    <span>Если товары вам не подойдут, 
+                                        мы вернем их обратно на склад — это бесплатно</span>
+                                </div>
                         </span>
                     </div>
                 </div>
