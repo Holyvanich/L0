@@ -778,12 +778,26 @@ body {
     margin: 10px;
 }
 
+.wrapper-base {
+    display: flex;
+}
+
 @media (min-width: 576px) {
   .modal-dialog {
       max-width: 400px;
       margin: 170px auto; 
       /* Исправить */
   }
+}
+
+@media (max-width: 1090px){
+    .wrapper-base {
+        flex-direction: column;
+    }
+    .order-wrapper {
+        margin: 0 24px 30px 24px;
+        width: auto;
+    }
 }
 
 .modal-content {
