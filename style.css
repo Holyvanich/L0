@@ -907,8 +907,12 @@ body {
     filter: invert(30%) sepia(100%) saturate(893%) hue-rotate(341deg) brightness(113%) contrast(103%);
 }
 
-.trash:hover, .trash:focus {
+.trash:hover {
     filter: invert(30%) sepia(100%) saturate(893%) hue-rotate(341deg) brightness(113%) contrast(103%);
+}
+
+.like:hover {
+    filter: invert(42%) sepia(96%) saturate(7487%) hue-rotate(299deg) brightness(86%) contrast(101%);
 }
 
 .form-radio input[type=radio] {
@@ -939,3 +943,41 @@ body {
     background-image: url("img/Dot.svg");
 }
  
+.hint {
+    position: relative;
+}
+
+.hidden {
+    display: none;
+    position: absolute;
+    top: 130%;
+    left: 0px;
+    width: 250px;
+    background: #FFFFFF;
+    border-radius: 8px;
+    padding: 11px 16px 13px 16px;
+    -moz-box-shadow: 0 1px 1px rgba(0,0,0,.16);
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.16);
+    box-shadow: 0 1px 1px rgba(0,0,0,.16);
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+.hidden-price {
+    top: 130%;
+    left: -100px;
+    width: 100px;
+}
+
+.hover:hover + .hidden{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.OOO-label {
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 16px;
+}
