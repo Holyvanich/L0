@@ -27,7 +27,10 @@
                     <span>Профиль</span>
                 </div>
                 <div class="cart-btn pointer">
-                    <img src="img/cart.svg">
+                    <div class="relative">
+                        <img class="relative" src="img/cart.svg">
+                        <div class="orange-circle">3</div>
+                    </div>
                     <span>Корзина</span>
                 </div>
             </div>
@@ -42,257 +45,262 @@
                             <div class="one-left">
                                 <input type="checkbox" class="checkbox" id="ok" onchange="selectAll()"><label for="ok">Выбрать все</label>
                             </div>
-                            <button class="close-btn"/>
+                            <button onclick="hideAll()" class="close-btn"/>
                         </div>
                     </li>
                     <hr class="line">
-                    <li class="item">
-                        <div class="left-content">
-                            <div class="row center">
-                                <input type="checkbox" class="checkbox" id="ok1" onchange="check1()">
-                                <label for="ok1"><img src="img/1.png" class="tovar"></label>
-                            </div>
-                            <div class="column">
-                                <span class="name-item">Футболка UZcotton мужская</span>
-                                <div class="props">
-                                    <span class="name-prop">Цвет: белый</span>
-                                    <span class="name-prop color-prop">Размер: 56</span>
+                    <div id="items">
+                        <li class="item" id="one">
+                            <div class="left-content">
+                                <div class="row center">
+                                    <input type="checkbox" class="checkbox" id="ok1" onchange="check1()">
+                                    <label for="ok1"><img src="img/1.png" class="tovar"></label>
                                 </div>
-                                <span class="name-place margin">Коледино WB</span>
-                                <div class="div-place">
-                                    <span class="name-place">OOO Вайлдберриз</span> 
-                                    <div>
-                                        <img src="img/icon-20.svg" class="info hover">
-                                        <div class="hidden">
-                                            <span class="OOO-label">ООО «Вайлдберриз»</span>
-                                            <span>ОГРН: 5167746237148</span>
-                                            <span>129337, Москва, улица Красная Сосна, 2, корпус 1, 
-                                                стр. 1, помещение 2, офис 34</span>
+                                <div class="column">
+                                    <span class="name-item">Футболка UZcotton мужская</span>
+                                    <div class="props">
+                                        <span class="name-prop">Цвет: белый</span>
+                                        <span class="name-prop color-prop">Размер: 56</span>
+                                    </div>
+                                    <span class="name-place margin">Коледино WB</span>
+                                    <div class="div-place">
+                                        <span class="name-place">OOO Вайлдберриз</span> 
+                                        <div>
+                                            <img src="img/icon-20.svg" class="info hover">
+                                            <div class="hidden">
+                                                <span class="OOO-label">ООО «Вайлдберриз»</span>
+                                                <span>ОГРН: 5167746237148</span>
+                                                <span>129337, Москва, улица Красная Сосна, 2, корпус 1, 
+                                                    стр. 1, помещение 2, офис 34</span>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>    
-                        </div>
-                        <div class="row space">
-                            <div class="column">
-                                <div class="counter">
-                                    <button class="left"><span class="minus">−</span></button>
-                                    <span class="counter-num h4">1</span>
-                                    <button class="right"><span class="plus">+</span></button>
-                                </div>
-                                <span class="warning">Осталось 2 шт.</span>
-                                <div class="icons">
-                                    <button class="like"/>
-                                    <button class="trash"/>
-                                </div>
+                                </div>    
                             </div>
-                            <div class="price">
-                                <span class="discount-price">522 сом</span>
-                                <div class="hint">
-                                    <span class="original-price hover">1051 сом</span>
-                                    <div class="hidden hidden-price ">
-                                        <div class="row space">
-                                            <span class="bw-text">Скидка 55%</span>
-                                            <span>−300 сом</span>
-                                        </div>
-                                        <div class="row space">
-                                            <span class="bw-text">Скидка покупателя 10%</span>
-                                            <span>−30 сом</span>
-                                        </div>
+                            <div class="row space">
+                                <div class="column">
+                                    <div class="counter">
+                                        <button class="left"><span class="minus">−</span></button>
+                                        <span class="counter-num h4">1</span>
+                                        <button class="right"><span class="plus">+</span></button>
+                                    </div>
+                                    <span class="warning">Осталось 2 шт.</span>
+                                    <div class="icons">
+                                        <button class="like"/>
+                                        <button onclick="deleteItem('one')" class="trash"/>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="item">
-                        <div class="left-content">
-                            <div class="row center">
-                                <input type="checkbox" class="checkbox" id="ok2" onchange="check2()">
-                                <label for="ok2"><img src="img/2.png" class="tovar"></label>
-                            </div>
-                            <div class="column">
-                                <span class="name-item">Силиконовый чехол картхолдер (отверстия) для карт, 
-                                                   прозрачный кейс бампер на Apple iPhone XR,
-                                                   MobiSafe</span>
-                                <div class="props">
-                                    <span class="name-prop">Цвет: прозрачный</span>
-                                </div>
-                                <span class="name-place margin">Коледино WB</span>
-                                <div class="div-place">
-                                    <span class="name-place">OOO Мегапрофстиль</span> 
-                                    <div>
-                                        <img src="img/icon-20.svg" class="info hover">
-                                        <div class="hidden">
-                                            <span class="OOO-label">ООО «МЕГАПРОФСТИЛЬ»</span>
-                                            <span>ОГРН: 5167746237148</span>
-                                            <span>129337, Москва, улица Красная Сосна, 2, корпус 1, 
-                                                стр. 1, помещение 2, офис 34</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>    
-                        </div>
-                        
-                        <div class="row space">
-                            <div class="column">
-                                <div class="counter">
-                                    <button class="left"><span class="minus">−</span></button>
-                                    <span class="counter-num h4">200</span>
-                                    <button class="right"><span class="plus">+</span></button>
-                                </div>
-                                <div class="icons">
-                                    <button class="like"/>
-                                    <button class="trash"/>
-                                </div>
-                            </div>
-                            <div class="price">
-                                <span class="discount-price big-price">2 100 047 сом</span>
-                                <div class="hint">
-                                    <span class="original-price hover">2 300 047 сом</span>
-                                    <div class="hidden hidden-price ">
-                                        <div class="row space">
-                                            <span class="bw-text">Скидка 55%</span>
-                                            <span>−300 сом</span>
-                                        </div>
-                                        <div class="row space">
-                                            <span class="bw-text">Скидка покупателя 10%</span>
-                                            <span>−30 сом</span>
+                                <div class="price">
+                                    <span id="price-one" class="discount-price">522 сом</span>
+                                    <div class="hint">
+                                        <span class="original-price hover">1051 сом</span>
+                                        <div class="hidden hidden-price ">
+                                            <div class="row space">
+                                                <span class="bw-text">Скидка 55%</span>
+                                                <span>−300 сом</span>
+                                            </div>
+                                            <div class="row space">
+                                                <span class="bw-text">Скидка покупателя 10%</span>
+                                                <span>−30 сом</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </li>
-                    <li class="item">
-                        <div class="left-content">
-                            <div class="row center">
-                                <input type="checkbox" class="checkbox" id="ok3" onchange="check3()">
-                                <label for="ok3"><img src="img/3.png" class="tovar"></label>
+                        </li>
+                        <li class="item" id="two">
+                            <div class="left-content">
+                                <div class="row center">
+                                    <input type="checkbox" class="checkbox" id="ok2" onchange="check2()">
+                                    <label for="ok2"><img src="img/2.png" class="tovar"></label>
+                                </div>
+                                <div class="column">
+                                    <span class="name-item">Силиконовый чехол картхолдер (отверстия) для карт, 
+                                                       прозрачный кейс бампер на Apple iPhone XR,
+                                                       MobiSafe</span>
+                                    <div class="props">
+                                        <span class="name-prop">Цвет: прозрачный</span>
+                                    </div>
+                                    <span class="name-place margin">Коледино WB</span>
+                                    <div class="div-place">
+                                        <span class="name-place">OOO Мегапрофстиль</span> 
+                                        <div>
+                                            <img src="img/icon-20.svg" class="info hover">
+                                            <div class="hidden">
+                                                <span class="OOO-label">ООО «МЕГАПРОФСТИЛЬ»</span>
+                                                <span>ОГРН: 5167746237148</span>
+                                                <span>129337, Москва, улица Красная Сосна, 2, корпус 1, 
+                                                    стр. 1, помещение 2, офис 34</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>    
                             </div>
-                            <div class="column">
-                                <span class="name-item">Карандаши цветные Faber-Castell "Замок", 
-                                                   набор 24 цвета, заточенные, 
-                                                   шестигранные, Faber-Castell </span>
-                                <span class="name-place margin">Коледино WB</span>
-                                <div class="div-place">
-                                    <span class="name-place">OOO Вайлдберриз</span> 
-                                    <div>
-                                        <img src="img/icon-20.svg" class="info hover">
-                                        <div class="hidden">
-                                            <span class="OOO-label">ООО «Вайлдберриз»</span>
-                                            <span>ОГРН: 5167746237148</span>
-                                            <span>129337, Москва, улица Красная Сосна, 2, корпус 1, 
-                                                стр. 1, помещение 2, офис 34</span>
+                            
+                            <div class="row space">
+                                <div class="column">
+                                    <div class="counter">
+                                        <button class="left"><span class="minus">−</span></button>
+                                        <span class="counter-num h4">200</span>
+                                        <button class="right"><span class="plus">+</span></button>
+                                    </div>
+                                    <div class="icons">
+                                        <button class="like"/>
+                                        <button onclick="deleteItem('two')" class="trash"/>
+                                    </div>
+                                </div>
+                                <div class="price">
+                                    <span id="price-two" class="discount-price big-price">2100047 сом</span>
+                                    <div class="hint">
+                                        <span class="original-price hover">2 300 047 сом</span>
+                                        <div class="hidden hidden-price ">
+                                            <div class="row space">
+                                                <span class="bw-text">Скидка 55%</span>
+                                                <span>−300 сом</span>
+                                            </div>
+                                            <div class="row space">
+                                                <span class="bw-text">Скидка покупателя 10%</span>
+                                                <span>−30 сом</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>    
-                        </div>
-                        <div class="row space">
-                            <div class="column">
-                                <div class="counter">
-                                    <button class="left"><span class="minus">−</span></button>
-                                    <span class="counter-num h4">2</span>
-                                    <button class="right"><span class="plus">+</span></button>
-                                </div>
-                                <span class="warning">Осталось 2 шт.</span>
-                                <div class="icons">
-                                    <button class="like"/>
-                                    <button class="trash"/>
-                                </div>
                             </div>
-                            <div class="price">
-                                <span class="discount-price">494 сом</span>
-                                <div class="hint">
-                                    <span class="original-price hover">950 сом</span>
-                                    <div class="hidden hidden-price ">
-                                        <div class="row space">
-                                            <span class="bw-text">Скидка 55%</span>
-                                            <span>−300 сом</span>
+                        </li>
+                        <li class="item" id="three">
+                            <div class="left-content">
+                                <div class="row center">
+                                    <input type="checkbox" class="checkbox" id="ok3" onchange="check3()">
+                                    <label for="ok3"><img src="img/3.png" class="tovar"></label>
+                                </div>
+                                <div class="column">
+                                    <span class="name-item">Карандаши цветные Faber-Castell "Замок", 
+                                                       набор 24 цвета, заточенные, 
+                                                       шестигранные, Faber-Castell </span>
+                                    <span class="name-place margin">Коледино WB</span>
+                                    <div class="div-place">
+                                        <span class="name-place">OOO Вайлдберриз</span> 
+                                        <div>
+                                            <img src="img/icon-20.svg" class="info hover">
+                                            <div class="hidden">
+                                                <span class="OOO-label">ООО «Вайлдберриз»</span>
+                                                <span>ОГРН: 5167746237148</span>
+                                                <span>129337, Москва, улица Красная Сосна, 2, корпус 1, 
+                                                    стр. 1, помещение 2, офис 34</span>
+                                            </div>
                                         </div>
-                                        <div class="row space">
-                                            <span class="bw-text">Скидка покупателя 10%</span>
-                                            <span>−30 сом</span>
+                                    </div>
+                                </div>    
+                            </div>
+                            <div class="row space">
+                                <div class="column">
+                                    <div class="counter">
+                                        <button class="left"><span class="minus">−</span></button>
+                                        <span class="counter-num h4">2</span>
+                                        <button class="right"><span class="plus">+</span></button>
+                                    </div>
+                                    <span class="warning">Осталось 2 шт.</span>
+                                    <div class="icons">
+                                        <button class="like"/>
+                                        <button onclick="deleteItem('three')" class="trash"/>
+                                    </div>
+                                </div>
+                                <div class="price">
+                                    <span id="price-three" class="discount-price">494 сом</span>
+                                    <div class="hint">
+                                        <span class="original-price hover">950 сом</span>
+                                        <div class="hidden hidden-price ">
+                                            <div class="row space">
+                                                <span class="bw-text">Скидка 55%</span>
+                                                <span>−300 сом</span>
+                                            </div>
+                                            <div class="row space">
+                                                <span class="bw-text">Скидка покупателя 10%</span>
+                                                <span>−30 сом</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </li>
+                        </li>
+                    </div>
+                    
                 </ul>
                 <ul class="list">
                     <li>
                         <div class="one">
                             <span>Отсутствуют · 3 товара</span>
-                            <button class="close-btn"/>
+                            <button onclick="hideAllGray()" class="close-btn"/>
                         </div>
                     </li>
                     <hr class="line">
-                    <li class="item">
-                        <div class="left-content">
-                            <div class="row center">
-                                <img src="img/1.png" class="tovar bw">
-                            </div>
-                            <div class="column">
-                                <span class="name-item bw-text">Футболка UZcotton мужская</span>
-                                <div class="props">
-                                    <span class="name-prop bw-text">Цвет: белый</span>
-                                    <span class="name-prop color-prop bw-text">Размер: 56</span>
+                    <div id="gray-items">
+                        <li class="item" id="four">
+                            <div class="left-content">
+                                <div class="row center">
+                                    <img src="img/1.png" class="tovar bw">
                                 </div>
-                            </div>    
-                        </div>
-                        <div class="row space">
-                            <div class="column out-of-stock-btn">
-                                <div class="icons">
-                                    <button class="like"/>
-                                    <button class="trash"/>
-                                </div>
+                                <div class="column">
+                                    <span class="name-item bw-text">Футболка UZcotton мужская</span>
+                                    <div class="props">
+                                        <span class="name-prop bw-text">Цвет: белый</span>
+                                        <span class="name-prop color-prop bw-text">Размер: 56</span>
+                                    </div>
+                                </div>    
                             </div>
-                        </div>
-                    </li>
-                    <li class="item">
-                        <div class="left-content">
-                            <div class="row center">
-                                <img src="img/2.png" class="tovar bw">
-                            </div>
-                            <div class="column">
-                                <span class="name-item bw-text">Силиконовый чехол картхолдер (отверстия) для карт, 
-                                    прозрачный кейс бампер на Apple iPhone XR,
-                                    MobiSafe</span>
-                                <div class="props">
-                                    <span class="name-prop bw-text">Цвет: прозрачный</span>
-                                </div>
-                            </div>    
-                        </div>
-                        <div class="row space">
-                            <div class="column out-of-stock-btn">
-                                <div class="icons">
-                                    <button class="like"/>
-                                    <button class="trash"/>
+                            <div class="row space">
+                                <div class="column out-of-stock-btn">
+                                    <div class="icons">
+                                        <button class="like"/>
+                                        <button onclick="deleteItem('four')" class="trash"/>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </li>
-                    <li class="item">
-                        <div class="left-content">
-                            <div class="row center">
-                                <img src="img/3.png" class="tovar bw">
+                        </li>
+                        <li class="item" id="five">
+                            <div class="left-content">
+                                <div class="row center">
+                                    <img src="img/2.png" class="tovar bw">
+                                </div>
+                                <div class="column">
+                                    <span class="name-item bw-text">Силиконовый чехол картхолдер (отверстия) для карт, 
+                                        прозрачный кейс бампер на Apple iPhone XR,
+                                        MobiSafe</span>
+                                    <div class="props">
+                                        <span class="name-prop bw-text">Цвет: прозрачный</span>
+                                    </div>
+                                </div>    
                             </div>
-                            <div class="column">
-                                <span class="name=item bw-text">Карандаши цветные Faber-Castell "Замок", 
-                                    набор 24 цвета, заточенные, 
-                                    шестигранные, Faber-Castell</span>
-                            </div>    
-                        </div>
-                        <div class="row space">
-                            <div class="column out-of-stock-btn">
-                                <div class="icons">
-                                    <button class="like"/>
-                                    <button class="trash"/>
+                            <div class="row space">
+                                <div class="column out-of-stock-btn">
+                                    <div class="icons">
+                                        <button class="like"/>
+                                        <button onclick="deleteItem('five')" class="trash"/>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </li>
+                        </li>
+                        <li class="item gray-items" id="six">
+                            <div class="left-content">
+                                <div class="row center">
+                                    <img src="img/3.png" class="tovar bw">
+                                </div>
+                                <div class="column">
+                                    <span class="name=item bw-text">Карандаши цветные Faber-Castell "Замок", 
+                                        набор 24 цвета, заточенные, 
+                                        шестигранные, Faber-Castell</span>
+                                </div>    
+                            </div>
+                            <div class="row space">
+                                <div class="column out-of-stock-btn">
+                                    <div class="icons">
+                                        <button class="like"/>
+                                        <button onclick="deleteItem('six')" class="trash"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </div>
                 </ul>
                 <div class="wrappers">
                     <div class="gray-wrapper">
@@ -318,12 +326,21 @@
                         <div class="row">
                             <span class="width-delivery h3">5—6 февраля</span>
                             <img class="tovar-small" src="img/1.png">
-                            <img class="tovar-small" src="img/2.png">
-                            <img class="tovar-small" src="img/3.png">
+                            <div class="relative">
+                                <img class="tovar-small relative" src="img/2.png">
+                                <div class="orange-circle long text-circle">184</div>
+                            </div>
+                            <div class="relative">
+                                <img class="tovar-small relative" src="img/3.png">
+                                <div class="orange-circle text-circle left28">2</div>
+                            </div>
                         </div>
                         <div class="row">
                             <span class="width-delivery h3">7—8 февраля</span>
-                            <img class="tovar-small" src="img/2.png">
+                            <div class="relative">
+                                <img class="tovar-small" src="img/2.png">
+                                <div class="orange-circle text-circle left28 avarage">16</div>
+                            </div>
                         </div>
                         <div class="row center">
                             <img style="margin-right: 9px;" src="img/price shipping.png">
@@ -380,7 +397,7 @@
                 <div class="column">
                     <div class="up-item primary">
                         <span class="itog">Итого</span>
-                        <span class="itog-num">2 101 063 сом</span>
+                        <span class="itog-num"><span id="itog">2 101 063</span> сом</span>
                     </div>
                     <div class="up-item">
                         <span class="h4">4 товара</span>
@@ -430,7 +447,7 @@
                     </div>
                     <div class="middle-1">
                         <div class="payment">                        
-                            <input type="checkbox" class="checkbox" id="okay">
+                            <input type="checkbox" class="checkbox" id="okay" onchange="payImmediatly()">
                             <label for="okay">Списать оплату сразу</label>
                         </div>
                         <span>Спишем оплату с карты при получении</span>
@@ -438,7 +455,7 @@
                 </div>
                 <div class="column">
                     <button class="submit">
-                        <span class="submit-text">Заказать</span>
+                        <span class="submit-text" id="payImm">Заказать</span>
                     </button>
                     <div class="down-1">
                         <img class="ok" src="img/ok.svg">

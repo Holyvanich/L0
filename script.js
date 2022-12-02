@@ -29,7 +29,6 @@ function check1() {
     {
         chbox.checked = true;
     }
-
 }
 
 function check2() {
@@ -59,4 +58,50 @@ function check3() {
         chbox.checked = true;
     }
 }
-    
+
+function deleteItem(id) {
+    const item = document.getElementById(id);
+    item.parentNode.removeChild(item);
+    return false;
+}
+
+function payImmediatly() {
+    const summa = document.getElementById('itog');
+    const text = document.getElementById("payImm");
+    const chbox = document.getElementById("okay");
+    if(chbox.checked == false) {
+        text.innerHTML = "Заказать"
+    } else {
+    text.innerHTML = "Оплатить " + summa.textContent + "сом";
+    }
+}
+
+function hideAll() {
+    const items = document.getElementById('items');
+    if (items.style.opacity == '0'){
+        items.style.opacity = 1;
+        items.style.position = 'relative';
+    } else {
+        items.style.opacity = 0;
+        items.style.position = 'absolute'; 
+    }
+}
+
+function hideAllGray() {
+    const items = document.getElementById('gray-items');
+    if (items.style.opacity == '0'){
+        items.style.opacity = 1;
+        items.style.position = 'relative';
+    } else {
+        items.style.opacity = 0;
+        items.style.position = 'absolute'; 
+    }
+}
+
+function countItog() {
+    const itog = document.getElementById('itog');
+    const first = document.getElementById('price-one');
+    const second = document.getElementById('price-two');
+    const third = document.getElementById('price-three');
+    itog.textContent = parseInt(first.textContent) + parseInt(second.textContent) + parseInt(third.textContent);
+}
