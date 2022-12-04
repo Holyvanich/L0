@@ -12,6 +12,19 @@
     <script src="script.js"></script>
 
     <div class="all">
+        <div class="header-mobile">
+            <img src="img/burger-mobile.svg">
+            <span class="brend">Товары и точка</span>
+            <button class="search-icon-mob"/>
+        </div>
+        <div class="menu-mobile">
+           <img class="mob-icon" src="img/Home.svg">
+           <img class="icon-mobile" src="img/catalog.svg">
+           <img class="icon-mobile" src="img/cart.svg">
+           <img class="mob-icon" src="img/Heart.svg">
+           <img class="mob-icon" src="img/profile.svg">
+        </div>
+
         <div class="header">
             <div class="nav">
                 <img src="img/Vector.svg">
@@ -19,7 +32,7 @@
             <div class="brend">Товары<br> и точка</div>
             <div class="search">
                 <input type="text" placeholder="Я ищу..." class="search-form"/>
-                <button class="lupa"/>
+                <button class="search-icon"/>
             </div>  
             <div class="menu">
                 <div class="profile-btn pointer">
@@ -28,7 +41,7 @@
                 </div>
                 <div class="cart-btn pointer">
                     <div class="relative">
-                        <img class="relative" src="img/cart.svg">
+                        <img class="relative" src="img/cart-desc.svg">
                         <div class="orange-circle">3</div>
                     </div>
                     <span>Корзина</span>
@@ -372,20 +385,40 @@
                         </div>
                     </div>
                     <div class="gray-wrapper">
-                        <span class="h1">Получатель</span>
+                        <span class="h1" style="margin-bottom: 10px;">Получатель</span>
                         <div class="row space gap24">
-                            <input type="text" placeholder="Имя" class="name input-data" >
-                            <input type="text" class="surname input-data"placeholder="Фамилия">
-                        </div>
-                        <div class="div-input-data row space gap24">
-                            <input type="text" class="email input-data" placeholder="Почта"/>
-                            <div class="phone-div column">
-                                <span class="bw-text">Телефон</span>
-                                <input type="text" class="phone input-data">
+                            <div class="input-div">
+                                <span class="bw-text placeholder" id="name-up">Имя</span>
+                                <input type="text" placeholder="Имя" class="input-data" id="name"
+                                onkeydown="upTextApply(document.getElementById('name-up'), document.getElementById('name'))" onblur="validateName(document.getElementById('name').value, 'name', 1)">
+                                <span class="warning-text" id="name-warning">Укажите имя</span>
                             </div>
-                            <div class="inn-div column">
-                                <input type="text" class="INN input-data" placeholder="ИНН">
-                                <span class="INN-label">Для таможенного оформления</span>
+                            <div class="input-div">
+                                <span class="bw-text placeholder" id="surname-up">Фамилия</span>
+                                <input type="text" class="input-data" placeholder="Фамилия" id="surname"
+                                onkeydown="upTextApply(document.getElementById('surname-up'), document.getElementById('surname'))" onblur="validateName(document.getElementById('surname').value, 'surname', 1)">
+                                <span class="warning-text" id="surname-warning">Укажите фамилию</span>
+                            </div>
+                        </div>
+                        <div class="row space gap24" style="margin: 15px 0 20px 0">
+                            <div class="input-div" tabindex="0">
+                                <span class="bw-text placeholder" id="email-up">Почта</span>
+                                <input type="text" placeholder="Почта" class="input-data" id="email" 
+                                onkeydown="upTextApply(document.getElementById('email-up'), document.getElementById('email'))" onblur="validateEmail(document.getElementById('email').value, 1)">
+                                <span class="warning-text" id="email-warning">Укажите Почту</span>
+                            </div>
+                            <div class="input-div">
+                                <span class="bw-text placeholder" id="phone-up">Телефон</span>
+                                <input type="text" class="input-data"placeholder="Телефон" id="phone"
+                                onkeydown="upTextApply(document.getElementById('phone-up'), document.getElementById('phone'))" onblur="validatePhone(document.getElementById('phone').value, 1)">
+                                <span class="warning-text" id="phone-warning">Укажите Телефон</span>
+                            </div>
+                            <div class="input-div">
+                                <span class="bw-text placeholder" id="inn-up">ИНН</span>
+                                <input type="text" class="input-data" placeholder="ИНН" id="inn"
+                                onkeydown="upTextApply(document.getElementById('inn-up'), document.getElementById('inn'))" onblur="validateInn(document.getElementById('inn').value, 1)">
+                                <span class="warning-text" id="inn-warning">Укажите ИНН</span>
+                                <span class="INN-label" id="inn-descr">Для таможенного оформления</span>
                             </div>
                         </div>
                     </div>
@@ -454,7 +487,7 @@
                     </div>
                 </div>
                 <div class="column">
-                    <button class="submit">
+                    <button class="submit" onclick="validateAll()">
                         <span class="submit-text" id="payImm">Заказать</span>
                     </button>
                     <div class="down-1">
@@ -475,7 +508,7 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h3 class="modal-title h2">Способ оплаты</h3>
+              <span class="modal-title h2">Способ оплаты</span>
               <a href="#close" title="Close" class="close"><img src="img/cross.svg" alt=""></a>
             </div>
             <div class="modal-body">  
@@ -542,7 +575,7 @@
               <a href="#close" title="Close" class="close"><img src="img/cross.svg" alt=""></a>
             </div>
             <div class="modal-body">
-                <div class="row gap8">
+                <div class="row space">
                     <button class="pickpoint-btn">В пункт выдачи</button>
                     <button class="pickpoint-btn selected">Курьером</button>
                 </div>
@@ -551,21 +584,24 @@
                     <div class="row space center">
                         <div class="form-radio">
                             <input id="radio-11" type="radio" name="adress" checked>
-                            <label class="h4" for="radio-11">Бишкек, улица Табышалиева, 57</label>
+                            <label for="radio-11"></label>
+                            <span class="h4">Бишкек, улица Табышалиева, 57</span>
                         </div>
                         <img src="img/trash-gray.svg" class="trash-gray"></img>
                     </div>
                     <div class="row space center">
                         <div class="form-radio">
                             <input id="radio-12" type="radio" name="adress">
-                            <label for="radio-12" class="h4">Бишкек, улица Жукеева-Пудовкина, 77/1</label>
+                            <label for="radio-12"></label>
+                            <span class="h4">Бишкек, улица Жукеева-Пудовкина, 77/1</span>
                         </div>
                         <img src="img/trash-gray.svg" class="trash-gray"></img>
                     </div>
                     <div class="row space center">
                         <div class="form-radio">
                             <input id="radio-13" type="radio" name="adress">
-                            <label for="radio-13" class="h4">Бишкек, микрорайон Джал, улица Ахунбаева Исы, 67/1</label>
+                            <label for="radio-13"></label>
+                            <span class="h4">Бишкек, микрорайон Джал, улица Ахунбаева Исы, 67/1</span>
                         </div>
                         <img src="img/trash-gray.svg" class="trash-gray"></img>
                     </div>

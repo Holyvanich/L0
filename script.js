@@ -105,3 +105,101 @@ function countItog() {
     const third = document.getElementById('price-three');
     itog.textContent = parseInt(first.textContent) + parseInt(second.textContent) + parseInt(third.textContent);
 }
+
+function upTextApply(id, name) {
+    if (name.value) {
+        id.style.display = "block";
+    } else {
+        id.style.display = "none";
+    }
+}
+
+function validateEmail(value, empty_validate) {
+    const re = /\S+@\S+\.\S+/;
+    if (empty_validate) {
+        if (value == '') {
+            return 1;
+        }
+    }
+    if (!re.test(value)) {
+        document.getElementById("email-warning").style.display = 'block';
+        document.getElementById("email").style.color = '#F55123';
+        document.getElementById("email").style.borderColor = '#F55123';
+    } else {
+        document.getElementById("email-warning").style.display = 'none';
+        document.getElementById("email").style.color = '#000000';
+        document.getElementById("email").style.borderColor = '#9797AF';
+    }
+}
+
+function validatePhone(value, empty_validate) {
+    const re = /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/;
+    if (empty_validate) {
+        if (value == '') {
+            return 1;
+        }
+    }
+    if (!re.test(value)) {
+        document.getElementById("phone-warning").style.display = 'block';
+        document.getElementById("phone").style.color = '#F55123';
+        document.getElementById("phone").style.borderColor = '#F55123';
+    } else {
+        document.getElementById("phone-warning").style.display = 'none';
+        document.getElementById("phone").style.color = '#000000';
+        document.getElementById("phone").style.borderColor = '#9797AF';
+    }
+}
+
+function validateName(value, id, empty_validate) {
+    const re = /[а-яА-Я]/;
+    if (empty_validate) {
+        if (value == '') {
+            return 1;
+        }
+    }
+    if (!re.test(value)) {
+        document.getElementById(id + "-warning").style.display = 'block';
+        document.getElementById(id).style.color = '#F55123';
+        document.getElementById(id).style.borderColor = '#F55123';
+    } else {
+        document.getElementById(id + "-warning").style.display = 'none';
+        document.getElementById(id).style.color = '#000000';
+        document.getElementById(id).style.borderColor = '#9797AF';
+    }
+}
+
+function validateInn(value, empty_validate) {
+    const re = /\d{10}/;
+    if (empty_validate) {
+        if (value == '') {
+            return 1;
+        }
+    }
+    if (!re.test(value)) {
+        document.getElementById("inn-warning").style.display = 'block';
+        document.getElementById("inn-descr").style.display = 'none';
+        document.getElementById("inn").style.color = '#F55123';
+        document.getElementById("inn").style.borderColor = '#F55123';
+    } else {
+        document.getElementById("inn-warning").style.display = 'none';
+        document.getElementById("inn-descr").style.display = 'block';
+        document.getElementById("inn").style.color = '#000000';
+        document.getElementById("inn").style.borderColor = '#9797AF';
+    }
+}
+
+function validateAll() {
+    validateInn(document.getElementById('inn').value, 0);
+    validateEmail(document.getElementById('email').value, 0);
+    validateName(document.getElementById('name').value, 'name', 0);
+    validateName(document.getElementById('surname').value, 'surname', 0);
+    validatePhone(document.getElementById('phone').value, 0);
+    window.scrollBy({
+        top: document.getElementById('name').getBoundingClientRect().top,
+        behavior: 'smooth'
+    });
+}
+
+
+
+
