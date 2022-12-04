@@ -119,6 +119,9 @@ function validateEmail(value, empty_validate) {
     const re = /\S+@\S+\.\S+/;
     if (empty_validate) {
         if (value == '') {
+            document.getElementById("email-warning").style.display = 'none';
+            document.getElementById("email").style.color = '#000000';
+            document.getElementById("email").style.borderColor = '#9797AF';
             return 1;
         }
     }
@@ -137,6 +140,9 @@ function validatePhone(value, empty_validate) {
     const re = /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/;
     if (empty_validate) {
         if (value == '') {
+            document.getElementById("phone-warning").style.display = 'none';
+            document.getElementById("phone").style.color = '#000000';
+            document.getElementById("phone").style.borderColor = '#9797AF';
             return 1;
         }
     }
@@ -155,6 +161,9 @@ function validateName(value, id, empty_validate) {
     const re = /[а-яА-Я]/;
     if (empty_validate) {
         if (value == '') {
+            document.getElementById(id + "-warning").style.display = 'none';
+            document.getElementById(id).style.color = '#000000';
+            document.getElementById(id).style.borderColor = '#9797AF';
             return 1;
         }
     }
@@ -173,6 +182,10 @@ function validateInn(value, empty_validate) {
     const re = /\d{10}/;
     if (empty_validate) {
         if (value == '') {
+            document.getElementById("inn-warning").style.display = 'none';
+            document.getElementById("inn-descr").style.display = 'block';
+            document.getElementById("inn").style.color = '#000000';
+            document.getElementById("inn").style.borderColor = '#9797AF';
             return 1;
         }
     }
