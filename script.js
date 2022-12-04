@@ -72,7 +72,7 @@ function payImmediatly() {
     if(chbox.checked == false) {
         text.innerHTML = "Заказать"
     } else {
-    text.innerHTML = "Оплатить " + summa.textContent + "сом";
+    text.innerHTML = "Оплатить " + summa.textContent + " сом";
     }
 }
 
@@ -107,11 +107,12 @@ function countItog() {
 }
 
 function upTextApply(id, name) {
-    if (name.value) {
-        id.style.display = "block";
-    } else {
+    if (!name.value) {
         id.style.display = "none";
-    }
+    } else {
+        id.style.display = "block";
+    } 
+    console.log(name.value)
 }
 
 function validateEmail(value, empty_validate) {

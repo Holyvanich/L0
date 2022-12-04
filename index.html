@@ -390,13 +390,13 @@
                             <div class="input-div">
                                 <span class="bw-text placeholder" id="name-up">Имя</span>
                                 <input type="text" placeholder="Имя" class="input-data" id="name"
-                                onkeydown="upTextApply(document.getElementById('name-up'), document.getElementById('name'))" onblur="validateName(document.getElementById('name').value, 'name', 1)">
+                                onkeyup="upTextApply(document.getElementById('name-up'), document.getElementById('name'))" onblur="validateName(document.getElementById('name').value, 'name', 1)">
                                 <span class="warning-text" id="name-warning">Укажите имя</span>
                             </div>
                             <div class="input-div">
                                 <span class="bw-text placeholder" id="surname-up">Фамилия</span>
                                 <input type="text" class="input-data" placeholder="Фамилия" id="surname"
-                                onkeydown="upTextApply(document.getElementById('surname-up'), document.getElementById('surname'))" onblur="validateName(document.getElementById('surname').value, 'surname', 1)">
+                                onkeyup="upTextApply(document.getElementById('surname-up'), document.getElementById('surname'))" onblur="validateName(document.getElementById('surname').value, 'surname', 1)">
                                 <span class="warning-text" id="surname-warning">Укажите фамилию</span>
                             </div>
                         </div>
@@ -404,19 +404,19 @@
                             <div class="input-div" tabindex="0">
                                 <span class="bw-text placeholder" id="email-up">Почта</span>
                                 <input type="text" placeholder="Почта" class="input-data" id="email" 
-                                onkeydown="upTextApply(document.getElementById('email-up'), document.getElementById('email'))" onblur="validateEmail(document.getElementById('email').value, 1)">
+                                onkeyup="upTextApply(document.getElementById('email-up'), document.getElementById('email'))" onblur="validateEmail(document.getElementById('email').value, 1)">
                                 <span class="warning-text" id="email-warning">Укажите Почту</span>
                             </div>
                             <div class="input-div">
                                 <span class="bw-text placeholder" id="phone-up">Телефон</span>
                                 <input type="text" class="input-data"placeholder="Телефон" id="phone"
-                                onkeydown="upTextApply(document.getElementById('phone-up'), document.getElementById('phone'))" onblur="validatePhone(document.getElementById('phone').value, 1)">
+                                onkeyup="upTextApply(document.getElementById('phone-up'), document.getElementById('phone'))" onblur="validatePhone(document.getElementById('phone').value, 1)">
                                 <span class="warning-text" id="phone-warning">Укажите Телефон</span>
                             </div>
                             <div class="input-div">
                                 <span class="bw-text placeholder" id="inn-up">ИНН</span>
                                 <input type="text" class="input-data" placeholder="ИНН" id="inn"
-                                onkeydown="upTextApply(document.getElementById('inn-up'), document.getElementById('inn'))" onblur="validateInn(document.getElementById('inn').value, 1)">
+                                onkeyup="upTextApply(document.getElementById('inn-up'), document.getElementById('inn'))" onblur="validateInn(document.getElementById('inn').value, 1)">
                                 <span class="warning-text" id="inn-warning">Укажите ИНН</span>
                                 <span class="INN-label" id="inn-descr">Для таможенного оформления</span>
                             </div>
@@ -469,7 +469,7 @@
                 </div>
                 <div class="column">
                     <div class="row space">
-                        <span class="label-delivery">Оплата картой</span>
+                        <span class="label-delivery" style="margin-bottom:10px;">Оплата картой</span>
                         <button onclick="location.href='#openEditPayment'" class="edit"/>
                     </div>
                     <div class="row center">
