@@ -2,9 +2,9 @@
 
 function selectAll() {
     const chbox = document.getElementById('ok');
-    const chbox1 = document.getElementById('ok1');
-    const chbox2 = document.getElementById('ok2');
-    const chbox3 = document.getElementById('ok3');
+    const chbox1 = document.getElementById('ok0');
+    const chbox2 = document.getElementById('ok1');
+    const chbox3 = document.getElementById('ok2');
     if (chbox.checked) {
         if (chbox1) {
             chbox1.checked = true;
@@ -28,53 +28,58 @@ function selectAll() {
             chbox3.checked = false;
         }
     }
+    countItog()
 }
 
 function check1() {
     const chbox = document.getElementById('ok');
-    const chbox1 = document.getElementById('ok1');
-    const chbox2 = document.getElementById('ok2');
-    const chbox3 = document.getElementById('ok3');
+    const chbox1 = document.getElementById('ok0');
     if (chbox1.checked == false) {
         chbox.checked = false;
     }
-    if (chbox1.checked & chbox2.checked & chbox3.checked)
-    {
-        chbox.checked = true;
-    }
+    countItog();
+    checkAll()
 }
 
 function check2() {
     const chbox = document.getElementById('ok');
-    const chbox1 = document.getElementById('ok1');
-    const chbox2 = document.getElementById('ok2');
-    const chbox3 = document.getElementById('ok3');
+    const chbox2 = document.getElementById('ok1');
     if (chbox2.checked == false) {
         chbox.checked = false;
     }
-    if (chbox1.checked & chbox2.checked & chbox3.checked)
-    {
-        chbox.checked = true;
-    }
+    countItog();
+    checkAll()
 }
 
 function check3() {
     const chbox = document.getElementById('ok');
-    const chbox1 = document.getElementById('ok1');
-    const chbox2 = document.getElementById('ok2');
-    const chbox3 = document.getElementById('ok3');;
+    const chbox3 = document.getElementById('ok2');;
     if (chbox3.checked == false) {
         chbox.checked = false;
     }
-    if (chbox1.checked & chbox2.checked & chbox3.checked)
+    countItog();
+    checkAll()
+}
+
+function checkAll() {
+    const chboxs = document.querySelectorAll('.item .checkbox');
+    let sum = 0;
+    for (let i = 0; i < chboxs.length; i++) {
+        if (chboxs[i].checked) {
+            sum += 1;
+        }
+    }
+
+    if (sum == chboxs.length)
     {
-        chbox.checked = true;
+        document.getElementById('ok').checked = true;
     }
 }
 
 function deleteItem(id) {
     const item = document.getElementById(id);
     item.parentNode.removeChild(item);
+    countItog();
     return false;
 }
 
@@ -85,7 +90,7 @@ function payImmediatly() {
     if(chbox.checked == false) {
         text.innerHTML = "Заказать"
     } else {
-    text.innerHTML = "Оплатить " + summa.textContent + " сом";
+        text.innerHTML = "Оплатить " + summa.textContent + " сом";
     }
 }
 
@@ -112,12 +117,40 @@ function hideAllGray() {
 }
 
 function countItog() {
-    const itog = document.getElementById('itog');
-    const first = document.getElementById('price-one');
-    const second = document.getElementById('price-two');
-    const third = document.getElementById('price-three');
-    itog.textContent = parseInt(first.textContent) + parseInt(second.textContent) + parseInt(third.textContent);
-}
+    const prices = document.querySelectorAll('.price .discount-price');
+    const prices_orig = document.querySelectorAll('.price .original-price');
+    const chbox = document.querySelectorAll('.item .checkbox');
+    const counter = document.querySelectorAll('.counter-num');
+
+    let final_sum = 0;
+    let quantity = 0;
+    let sum = 0;
+    let discount = 0;
+    for (let i = 0; i < prices.length; i++) {
+        if (chbox[i].checked) {
+            s = prices[i].textContent.replace(/\s/g, '');
+            final_sum += parseInt(s) * counter[i].textContent;
+
+            d = prices_orig[i].textContent.replace(/\s/g, '');
+            sum += parseInt(d) * counter[i].textContent;
+
+            quantity += 1 * counter[i].textContent;
+        }
+    }
+    var parts = final_sum.toString().split(".");
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    document.getElementById('itog').innerHTML = parts.join(".");
+
+    var parts_sum = sum.toString().split(".");
+    parts_sum[0] = parts_sum[0].replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    document.getElementById('sum').innerHTML = parts_sum.join(".");
+    document.getElementById('quantity').innerHTML = quantity;
+
+    discount = sum - final_sum;
+    var parts_d = discount.toString().split(".");
+    parts_d[0] = parts_d[0].replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    document.getElementById('discount').innerHTML = parts_d.join(".");;
+}   
 
 function upTextApply(id, name) {
     if (!name.value) {
@@ -190,7 +223,7 @@ function validatePhone(value) {
 }
 
 function validateName(value, id) {
-    const re = /[а-яА-Я]/;
+    const re = /^[а-яА-Яa-zA-Z]+$/;
     if (value == '') {
         document.getElementById(id + "-warning").style.display = 'none';
         document.getElementById(id).style.color = '#000000';
@@ -221,6 +254,7 @@ function validateInn(value) {
     if (!re.test(value)) {
         document.getElementById("inn-warning-validate").style.display = 'block';
         document.getElementById("inn-descr").style.display = 'none';
+        document.getElementById("inn-warning").style.display = 'none';
         document.getElementById("inn").style.color = '#F55123';
         document.getElementById("inn").style.borderColor = '#F55123';
     } else {

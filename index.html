@@ -57,8 +57,10 @@
                         <li class="item" id="one">
                             <div class="left-content">
                                 <div class="row center">
-                                    <input type="checkbox" class="checkbox" id="ok1" onchange="check1()">
-                                    <label for="ok1"><img src="img/1.png" class="tovar"></label>
+                                    <input type="checkbox" class="checkbox" id="ok0" onchange="check1()">
+                                    <label for="ok0"><img src="img/1.png" class="product">
+                                        <div class="white-square"><span>56</span></div>
+                                    </label>
                                 </div>
                                 <div class="column">
                                     <div class="price-mob">
@@ -91,7 +93,7 @@
                                 <div class="counter-wrapper">
                                     <div class="counter">
                                         <button class="left"><span class="minus">−</span></button>
-                                        <span class="counter-num h4">1</span>
+                                        <span class="counter-num h4" id="item0">1</span>
                                         <button class="right"><span class="plus">+</span></button>
                                     </div>
                                     <span class="warning">Осталось 2 шт.</span>
@@ -121,8 +123,8 @@
                         <li class="item" id="two">
                             <div class="left-content">
                                 <div class="row center">
-                                    <input type="checkbox" class="checkbox" id="ok2" onchange="check2()">
-                                    <label for="ok2"><img src="img/2.png" class="tovar"></label>
+                                    <input type="checkbox" class="checkbox" id="ok1" onchange="check2()">
+                                    <label for="ok1"><img src="img/2.png" class="product"></label>
                                 </div>
                                 <div class="column">
                                     <div class="price-mob">
@@ -157,7 +159,7 @@
                                 <div class="counter-wrapper">
                                     <div class="counter">
                                         <button class="left"><span class="minus">−</span></button>
-                                        <span class="counter-num h4">200</span>
+                                        <span class="counter-num h4" id="item1">200</span>
                                         <button class="right"><span class="plus">+</span></button>
                                     </div>
                                     <div class="icons">
@@ -166,7 +168,7 @@
                                     </div>
                                 </div>
                                 <div class="price">
-                                    <span id="price-two" class="discount-price big-price">2100047 сом</span>
+                                    <span id="price-two" class="discount-price big-price">2 100 047 сом</span>
                                     <div class="hint">
                                         <span class="original-price hover">2 300 047 сом</span>
                                         <div class="hidden hidden-price ">
@@ -186,8 +188,8 @@
                         <li class="item" id="three">
                             <div class="left-content">
                                 <div class="row center">
-                                    <input type="checkbox" class="checkbox" id="ok3" onchange="check3()">
-                                    <label for="ok3"><img src="img/3.png" class="tovar"></label>
+                                    <input type="checkbox" class="checkbox" id="ok2" onchange="check3()">
+                                    <label for="ok2"><img src="img/3.png" class="product"></label>
                                 </div>
                                 <div class="column">
                                     <div class="price-mob">
@@ -218,7 +220,7 @@
                                 <div class="counter-wrapper">
                                     <div class="counter">
                                         <button class="left"><span class="minus">−</span></button>
-                                        <span class="counter-num h4">2</span>
+                                        <span class="counter-num h4" id="item2">2</span>
                                         <button class="right"><span class="plus">+</span></button>
                                     </div>
                                     <span class="warning">Осталось 2 шт.</span>
@@ -259,8 +261,9 @@
                     <div id="gray-items">
                         <li class="item" id="four">
                             <div class="left-content">
-                                <div class="row center">
-                                    <img src="img/1.png" class="tovar bw">
+                                <div class="row center relative">
+                                    <img src="img/1.png" class="product bw">
+                                    <div class="white-square"><span>56</span></div>
                                 </div>
                                 <div class="column">
                                     <span class="h4 bw-text">Футболка UZcotton мужская</span>
@@ -282,7 +285,7 @@
                         <li class="item" id="five">
                             <div class="left-content">
                                 <div class="row center">
-                                    <img src="img/2.png" class="tovar bw">
+                                    <img src="img/2.png" class="product bw">
                                 </div>
                                 <div class="column">
                                     <span class=" bw-text">Силиконовый чехол картхолдер (отверстия) для карт, 
@@ -304,8 +307,9 @@
                         </li>
                         <li class="item gray-items" id="six">
                             <div class="left-content">
-                                <div class="row center">
-                                    <img src="img/3.png" class="tovar bw">
+                                <div class="row center relative">
+                                    <img src="img/3.png" class="product bw">
+                                    <div class="white-rectangle">56/54/52...</div>
                                 </div>
                                 <div class="column">
                                     <span class="name=item bw-text">Карандаши цветные Faber-Castell "Замок", 
@@ -348,13 +352,13 @@
                         <div class="editable-flex">
                             <span class="width-delivery h3">5—6 февраля</span>
                             <div class="row">
-                                <img class="tovar-small" src="img/1.png">
+                                <img class="product-small" src="img/1.png">
                                 <div class="relative">
-                                    <img class="tovar-small relative" src="img/2.png">
+                                    <img class="product-small relative" src="img/2.png">
                                     <div class="orange-circle long text-circle">184</div>
                                 </div>
                                 <div class="relative">
-                                    <img class="tovar-small relative" src="img/3.png">
+                                    <img class="product-small relative" src="img/3.png">
                                     <div class="orange-circle text-circle left28">2</div>
                                 </div>
                             </div>
@@ -363,7 +367,7 @@
                             <span class="width-delivery h3">7—8 февраля</span>
                             <div class="row">
                                 <div class="relative">
-                                    <img class="tovar-small" src="img/2.png">
+                                    <img class="product-small" src="img/2.png">
                                     <div class="orange-circle text-circle left28 avarage">16</div>
                                 </div>
                             </div>
@@ -401,7 +405,7 @@
                     </div>
                     <div class="gray-wrapper">
                         <span class="h1" style="margin-bottom: 10px;">Получатель</span>
-                        <div class="wrapper-input">
+                        <div class="wrapper-input mobile-margin-bottom">
                             <div class="input-div">
                                 <span class="bw-text placeholder" id="name-up">Имя</span>
                                 <input type="text" placeholder="Имя" class="input-data" id="name"
@@ -448,18 +452,18 @@
                 <div class="column">
                     <div class="up-item primary">
                         <span class="itog">Итого</span>
-                        <span class="itog-num"><span id="itog">2 101 063</span> сом</span>
+                        <span class="itog-num"><span id="itog">0</span> сом</span>
                     </div>
                     <div class="up-item">
-                        <span class="h4">4 товара</span>
-                        <span class="h4">2 302 048 сом</span>
+                        <span class="h4"><span id="quantity">0</span> товара</span>
+                        <span class="h4"><span id="sum">0</span> сом</span>
                     </div>
                     <div class="up-item">
                         <span class="h4">Скидка</span>
-                        <span class="h4">-200 985 сом</span>
+                        <span class="h4">-<span id="discount">0</span> сом</span>
                     </div>
                     <div class="up-item">
-                        <span class="h4">Доствка</span>
+                        <span class="h4">Доставка</span>
                         <span class="h4">Бесплатно</span>
                     </div>
                 </div>
