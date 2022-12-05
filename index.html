@@ -15,13 +15,6 @@
             <span class="brend">Товары и точка</span>
             <button class="search-icon-mob"/>
         </div>
-        <div class="menu-mobile">
-           <img class="mob-icon" src="img/Home.svg">
-           <img class="icon-mobile" src="img/catalog.svg">
-           <img class="icon-mobile" src="img/cart.svg">
-           <img class="mob-icon" src="img/Heart.svg">
-           <img class="mob-icon" src="img/profile.svg">
-        </div>
 
         <div class="header">
             <div class="nav">
@@ -49,8 +42,8 @@
 <div class="base">
         <div class="wrapper-base">
             <div class="cart">
-                <span class="cart-label">Корзина</span>
                 <ul class="list">
+                <span class="cart-label">Корзина</span>
                     <li>
                         <div class="one">
                             <div class="one-left">
@@ -68,7 +61,13 @@
                                     <label for="ok1"><img src="img/1.png" class="tovar"></label>
                                 </div>
                                 <div class="column">
-                                    <span class="name-item">Футболка UZcotton мужская</span>
+                                    <div class="price-mob">
+                                        <span id="price-one" class="discount-price">522 сом</span>
+                                        <div class="hint">
+                                            <span class="original-price">1051 сом</span>
+                                        </div>
+                                    </div>
+                                    <span class="h4">Футболка UZcotton мужская</span>
                                     <div class="props">
                                         <span class="name-prop">Цвет: белый</span>
                                         <span class="name-prop color-prop">Размер: 56</span>
@@ -88,8 +87,8 @@
                                     </div>
                                 </div>    
                             </div>
-                            <div class="row space">
-                                <div class="column">
+                            <div class="counter-price">
+                                <div class="counter-wrapper">
                                     <div class="counter">
                                         <button class="left"><span class="minus">−</span></button>
                                         <span class="counter-num h4">1</span>
@@ -126,7 +125,13 @@
                                     <label for="ok2"><img src="img/2.png" class="tovar"></label>
                                 </div>
                                 <div class="column">
-                                    <span class="name-item">Силиконовый чехол картхолдер (отверстия) для карт, 
+                                    <div class="price-mob">
+                                        <span id="price-one" class="discount-price">522 сом</span>
+                                        <div class="hint">
+                                            <span class="original-price">1051 сом</span>
+                                        </div>
+                                    </div>
+                                    <span class="h4">Силиконовый чехол картхолдер (отверстия) для карт, 
                                                        прозрачный кейс бампер на Apple iPhone XR,
                                                        MobiSafe</span>
                                     <div class="props">
@@ -148,8 +153,8 @@
                                 </div>    
                             </div>
                             
-                            <div class="row space">
-                                <div class="column">
+                            <div class="counter-price">
+                                <div class="counter-wrapper">
                                     <div class="counter">
                                         <button class="left"><span class="minus">−</span></button>
                                         <span class="counter-num h4">200</span>
@@ -185,7 +190,13 @@
                                     <label for="ok3"><img src="img/3.png" class="tovar"></label>
                                 </div>
                                 <div class="column">
-                                    <span class="name-item">Карандаши цветные Faber-Castell "Замок", 
+                                    <div class="price-mob">
+                                        <span id="price-one" class="discount-price">522 сом</span>
+                                        <div class="hint">
+                                            <span class="original-price">1051 сом</span>
+                                        </div>
+                                    </div>
+                                    <span class="h4">Карандаши цветные Faber-Castell "Замок", 
                                                        набор 24 цвета, заточенные, 
                                                        шестигранные, Faber-Castell </span>
                                     <span class="name-place margin">Коледино WB</span>
@@ -203,8 +214,8 @@
                                     </div>
                                 </div>    
                             </div>
-                            <div class="row space">
-                                <div class="column">
+                            <div class="counter-price">
+                                <div class="counter-wrapper">
                                     <div class="counter">
                                         <button class="left"><span class="minus">−</span></button>
                                         <span class="counter-num h4">2</span>
@@ -252,7 +263,7 @@
                                     <img src="img/1.png" class="tovar bw">
                                 </div>
                                 <div class="column">
-                                    <span class="name-item bw-text">Футболка UZcotton мужская</span>
+                                    <span class="h4 bw-text">Футболка UZcotton мужская</span>
                                     <div class="props">
                                         <span class="name-prop bw-text">Цвет: белый</span>
                                         <span class="name-prop color-prop bw-text">Размер: 56</span>
@@ -274,7 +285,7 @@
                                     <img src="img/2.png" class="tovar bw">
                                 </div>
                                 <div class="column">
-                                    <span class="name-item bw-text">Силиконовый чехол картхолдер (отверстия) для карт, 
+                                    <span class=" bw-text">Силиконовый чехол картхолдер (отверстия) для карт, 
                                         прозрачный кейс бампер на Apple iPhone XR,
                                         MobiSafe</span>
                                     <div class="props">
@@ -319,8 +330,8 @@
                             <span class="delivery-label">Способ доставки</span>
                             <a href="#openEditDelivery" class="edit-delivery">Изменить</a>
                         </div>
-                        <div class="row">
-                            <span class="width-delivery h3">Пункт выдачи</span>
+                        <div class="editable-flex">
+                            <span class="width-delivery h3 mobile-margin">Пункт выдачи</span>
                             <div class="column">
                                 <span class="h5">Бишкек, улица Ахматбека Суюмбаева, 12/1</span>
                                 <div class="row">
@@ -330,43 +341,49 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="editable-flex">
                             <span class="width-delivery h3">Стоимость доставки</span>
                             <span class="h5">Бесплатно</span>
                         </div>
-                        <div class="row">
+                        <div class="editable-flex">
                             <span class="width-delivery h3">5—6 февраля</span>
-                            <img class="tovar-small" src="img/1.png">
-                            <div class="relative">
-                                <img class="tovar-small relative" src="img/2.png">
-                                <div class="orange-circle long text-circle">184</div>
-                            </div>
-                            <div class="relative">
-                                <img class="tovar-small relative" src="img/3.png">
-                                <div class="orange-circle text-circle left28">2</div>
+                            <div class="row">
+                                <img class="tovar-small" src="img/1.png">
+                                <div class="relative">
+                                    <img class="tovar-small relative" src="img/2.png">
+                                    <div class="orange-circle long text-circle">184</div>
+                                </div>
+                                <div class="relative">
+                                    <img class="tovar-small relative" src="img/3.png">
+                                    <div class="orange-circle text-circle left28">2</div>
+                                </div>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="editable-flex">
                             <span class="width-delivery h3">7—8 февраля</span>
-                            <div class="relative">
-                                <img class="tovar-small" src="img/2.png">
-                                <div class="orange-circle text-circle left28 avarage">16</div>
+                            <div class="row">
+                                <div class="relative">
+                                    <img class="tovar-small" src="img/2.png">
+                                    <div class="orange-circle text-circle left28 avarage">16</div>
+                                </div>
                             </div>
                         </div>
                         <div class="row center">
                             <img style="margin-right: 9px;" src="img/price shipping.png">
                             <span class="free-text">Обратная доставка товаров на склад при отказе —
-                                <span class="free hover">бесплатно</span>
-                                <div class="hidden hidden-free">
-                                    <span>Если товары вам не подойдут, 
-                                        мы вернем их обратно на склад — это бесплатно</span>
+                                <div class="relative">
+                                    <span class="free hover">бесплатно</span>
+                                    <div class="hidden hidden-free">
+                                        <span>Если товары вам не подойдут, 
+                                            мы вернем их обратно на склад — это бесплатно</span>
+                                    </div>
                                 </div>
                             </span>
                         </div>
                     </div>
                     <div class="gray-wrapper">
                         <div class="row center space">
-                            <span class="delivry-label">Способ оплаты</span>
+                            <span class="delivery-label">Способ оплаты</span>
                             <a href="#openEditPayment" class="edit-delivery">Изменить</a>
                         </div>
                         <div class="column gap8">
@@ -384,39 +401,42 @@
                     </div>
                     <div class="gray-wrapper">
                         <span class="h1" style="margin-bottom: 10px;">Получатель</span>
-                        <div class="row space gap24">
+                        <div class="wrapper-input">
                             <div class="input-div">
                                 <span class="bw-text placeholder" id="name-up">Имя</span>
                                 <input type="text" placeholder="Имя" class="input-data" id="name"
-                                onkeyup="upTextApply(document.getElementById('name-up'), document.getElementById('name'))" onblur="validateName(document.getElementById('name').value, 'name', 1)">
+                                onkeyup="upTextApply(document.getElementById('name-up'), document.getElementById('name'))" onblur="validateName(document.getElementById('name').value, 'name')">
                                 <span class="warning-text" id="name-warning">Укажите имя</span>
                             </div>
                             <div class="input-div">
                                 <span class="bw-text placeholder" id="surname-up">Фамилия</span>
                                 <input type="text" class="input-data" placeholder="Фамилия" id="surname"
-                                onkeyup="upTextApply(document.getElementById('surname-up'), document.getElementById('surname'))" onblur="validateName(document.getElementById('surname').value, 'surname', 1)">
+                                onkeyup="upTextApply(document.getElementById('surname-up'), document.getElementById('surname'))" onblur="validateName(document.getElementById('surname').value, 'surname')">
                                 <span class="warning-text" id="surname-warning">Укажите фамилию</span>
                             </div>
                         </div>
-                        <div class="row space gap24" style="margin: 15px 0 20px 0">
-                            <div class="input-div" tabindex="0">
+                        <div class="wrapper-input" style="margin: 15px 0 20px 0">
+                            <div class="input-div">
                                 <span class="bw-text placeholder" id="email-up">Почта</span>
                                 <input type="text" placeholder="Почта" class="input-data" id="email" 
-                                onkeyup="upTextApply(document.getElementById('email-up'), document.getElementById('email'))" onblur="validateEmail(document.getElementById('email').value, 1)">
-                                <span class="warning-text" id="email-warning">Укажите Почту</span>
+                                onkeyup="upTextApply(document.getElementById('email-up'), document.getElementById('email'))" onblur="validateEmail(document.getElementById('email').value)">
+                                <span class="warning-text" id="email-warning">Укажите электронную почту</span>
+                                <span class="warning-text warning-text-email" id="email-warning-validate">Проверьте адрес электронной почты</span>
                             </div>
                             <div class="input-div">
                                 <span class="bw-text placeholder" id="phone-up">Телефон</span>
                                 <input type="text" class="input-data"placeholder="Телефон" id="phone"
-                                onkeyup="upTextApply(document.getElementById('phone-up'), document.getElementById('phone'))" onblur="validatePhone(document.getElementById('phone').value, 1)">
-                                <span class="warning-text" id="phone-warning">Укажите Телефон</span>
+                                onkeyup="upTextApply(document.getElementById('phone-up'), document.getElementById('phone'))" onblur="validatePhone(document.getElementById('phone').value)">
+                                <span class="warning-text" id="phone-warning">Укажите номер телефона</span>
+                                <span class="warning-text" id="phone-warning-validate">Формат: +9 999 999 99 99</span>
                             </div>
                             <div class="input-div">
                                 <span class="bw-text placeholder" id="inn-up">ИНН</span>
                                 <input type="text" class="input-data" placeholder="ИНН" id="inn"
-                                onkeyup="upTextApply(document.getElementById('inn-up'), document.getElementById('inn'))" onblur="validateInn(document.getElementById('inn').value, 1)">
+                                onkeyup="upTextApply(document.getElementById('inn-up'), document.getElementById('inn'))" onblur="validateInn(document.getElementById('inn').value)">
                                 <span class="warning-text" id="inn-warning">Укажите ИНН</span>
                                 <span class="INN-label" id="inn-descr">Для таможенного оформления</span>
+                                <span class="warning-text" id="inn-warning-validate">Формат: 1234567890</span>
                             </div>
                         </div>
                     </div>
@@ -502,15 +522,26 @@
         <span class="copyright">© 2022  ООО «Товары и точка»</span>
     </div>
 
+    <div class="menu-mobile">
+        <img class="mob-icon" src="img/Home.svg">
+        <img class="icon-mobile" src="img/catalog.svg">
+        <div class="relative">
+            <img class="icon-mobile" src="img/cart.svg">
+            <div class="orange-circle text-circle">3</div>
+        </div>
+        <img class="mob-icon" src="img/Heart.svg">
+        <img class="mob-icon" src="img/profile.svg">
+     </div>
+
     <div id="openEditPayment" class="modal">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-payment">
           <div class="modal-content">
             <div class="modal-header">
               <span class="modal-title h2">Способ оплаты</span>
               <a href="#close" title="Close" class="close"><img src="img/cross.svg" alt=""></a>
             </div>
             <div class="modal-body">  
-                <form class="column gap8">
+                <form class="column gap16">
                       <div class="row center">
                         <div class="form-radio">
                             <input type="radio" name="card" id="mir" class="radio" checked>
@@ -573,9 +604,13 @@
               <a href="#close" title="Close" class="close"><img src="img/cross.svg" alt=""></a>
             </div>
             <div class="modal-body">
-                <div class="row space">
-                    <button class="pickpoint-btn">В пункт выдачи</button>
-                    <button class="pickpoint-btn selected">Курьером</button>
+                <div class="row space gap8">
+                    <button class="pickpoint-btn">
+                        В пункт выдачи
+                    </button>
+                    <button class="pickpoint-btn selected">
+                        Курьером
+                    </button>
                 </div>
                 <span class="adresses-label">Мои адреса</span>
                 <form class="column gap20">

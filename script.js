@@ -128,57 +128,74 @@ function upTextApply(id, name) {
     console.log(name.value)
 }
 
-function validateEmail(value, empty_validate) {
+function validateEmpty(value, name) {
+    if (value == '') {
+        document.getElementById(name + "-warning").style.display = 'block';
+        document.getElementById(name).style.color = '#F55123';
+        document.getElementById(name).style.borderColor = '#F55123';
+    }
+}
+
+function validateEmptyInn(value, name) {
+    if (value == '') {
+        document.getElementById(name + "-warning").style.display = 'block';
+        document.getElementById("inn-descr").style.display = 'none';
+        document.getElementById(name).style.color = '#F55123';
+        document.getElementById(name).style.borderColor = '#F55123';
+    }
+}
+
+function validateEmail(value) {
     const re = /\S+@\S+\.\S+/;
-    if (empty_validate) {
-        if (value == '') {
-            document.getElementById("email-warning").style.display = 'none';
-            document.getElementById("email").style.color = '#000000';
-            document.getElementById("email").style.borderColor = '#9797AF';
-            return 1;
-        }
+    if (value == '') {
+        document.getElementById("email-warning").style.display = 'none';
+        document.getElementById("email-warning-validate").style.display = 'none';
+        document.getElementById("email").style.color = '#000000';
+        document.getElementById("email").style.borderColor = '#9797AF';
+        return 1;
     }
     if (!re.test(value)) {
-        document.getElementById("email-warning").style.display = 'block';
+        document.getElementById("email-warning").style.display = 'none';
+        document.getElementById("email-warning-validate").style.display = 'block';
         document.getElementById("email").style.color = '#F55123';
         document.getElementById("email").style.borderColor = '#F55123';
     } else {
         document.getElementById("email-warning").style.display = 'none';
+        document.getElementById("email-warning-validate").style.display = 'none';
         document.getElementById("email").style.color = '#000000';
         document.getElementById("email").style.borderColor = '#9797AF';
     }
 }
 
-function validatePhone(value, empty_validate) {
+function validatePhone(value) {
     const re = /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/;
-    if (empty_validate) {
-        if (value == '') {
-            document.getElementById("phone-warning").style.display = 'none';
-            document.getElementById("phone").style.color = '#000000';
-            document.getElementById("phone").style.borderColor = '#9797AF';
-            return 1;
-        }
+    if (value == '') {
+        document.getElementById("phone-warning").style.display = 'none';
+        document.getElementById("phone-warning-validate").style.display = 'none';
+        document.getElementById("phone").style.color = '#000000';
+        document.getElementById("phone").style.borderColor = '#9797AF';
+        return 1;
     }
     if (!re.test(value)) {
-        document.getElementById("phone-warning").style.display = 'block';
+        document.getElementById("phone-warning").style.display = 'none';
+        document.getElementById("phone-warning-validate").style.display = 'block';
         document.getElementById("phone").style.color = '#F55123';
         document.getElementById("phone").style.borderColor = '#F55123';
     } else {
         document.getElementById("phone-warning").style.display = 'none';
+        document.getElementById("phone-warning-validate").style.display = 'none';
         document.getElementById("phone").style.color = '#000000';
         document.getElementById("phone").style.borderColor = '#9797AF';
     }
 }
 
-function validateName(value, id, empty_validate) {
+function validateName(value, id) {
     const re = /[а-яА-Я]/;
-    if (empty_validate) {
-        if (value == '') {
-            document.getElementById(id + "-warning").style.display = 'none';
-            document.getElementById(id).style.color = '#000000';
-            document.getElementById(id).style.borderColor = '#9797AF';
-            return 1;
-        }
+    if (value == '') {
+        document.getElementById(id + "-warning").style.display = 'none';
+        document.getElementById(id).style.color = '#000000';
+        document.getElementById(id).style.borderColor = '#9797AF';
+        return 1;
     }
     if (!re.test(value)) {
         document.getElementById(id + "-warning").style.display = 'block';
@@ -191,24 +208,24 @@ function validateName(value, id, empty_validate) {
     }
 }
 
-function validateInn(value, empty_validate) {
-    const re = /\d{10}/;
-    if (empty_validate) {
-        if (value == '') {
-            document.getElementById("inn-warning").style.display = 'none';
-            document.getElementById("inn-descr").style.display = 'block';
-            document.getElementById("inn").style.color = '#000000';
-            document.getElementById("inn").style.borderColor = '#9797AF';
-            return 1;
-        }
+function validateInn(value) {
+    const re = /^\d{10,10}$/;
+    if (value == '') {
+        document.getElementById("inn-warning").style.display = 'none';
+        document.getElementById("inn-warning-validate").style.display = 'none';
+        document.getElementById("inn-descr").style.display = 'block';
+        document.getElementById("inn").style.color = '#000000';
+        document.getElementById("inn").style.borderColor = '#9797AF';
+        return 1;
     }
     if (!re.test(value)) {
-        document.getElementById("inn-warning").style.display = 'block';
+        document.getElementById("inn-warning-validate").style.display = 'block';
         document.getElementById("inn-descr").style.display = 'none';
         document.getElementById("inn").style.color = '#F55123';
         document.getElementById("inn").style.borderColor = '#F55123';
     } else {
         document.getElementById("inn-warning").style.display = 'none';
+        document.getElementById("inn-warning-validate").style.display = 'none';
         document.getElementById("inn-descr").style.display = 'block';
         document.getElementById("inn").style.color = '#000000';
         document.getElementById("inn").style.borderColor = '#9797AF';
@@ -216,11 +233,11 @@ function validateInn(value, empty_validate) {
 }
 
 function validateAll() {
-    validateInn(document.getElementById('inn').value, 0);
-    validateEmail(document.getElementById('email').value, 0);
-    validateName(document.getElementById('name').value, 'name', 0);
-    validateName(document.getElementById('surname').value, 'surname', 0);
-    validatePhone(document.getElementById('phone').value, 0);
+    validateEmpty(document.getElementById('email').value, "email")
+    validateEmpty(document.getElementById('name').value, "name")
+    validateEmpty(document.getElementById('surname').value, "surname")
+    validateEmpty(document.getElementById('phone').value, "phone")
+    validateEmptyInn(document.getElementById('inn').value, "inn")
     window.scrollBy({
         top: document.getElementById('name').getBoundingClientRect().top,
         behavior: 'smooth'
