@@ -504,7 +504,7 @@ function changeDelivery(id) {
             product.style.display = 'none';
             product.style.position = 'absolute';
         } 
-        if ((!document.getElementById('ok').checked) && (!document.getElementById('ok').checked) && (!document.getElementById('ok').checked)) {
+        if ((!document.getElementById('ok0').checked) && (!document.getElementById('ok1').checked) && (!document.getElementById('ok2').checked)) {
             interval.classList.remove("none");
         }
     }
