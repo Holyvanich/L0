@@ -29,6 +29,9 @@ function selectAll() {
         }
     }
     countItog()
+    changeDelivery(1);
+    changeDelivery(2);
+    changeDelivery(3);
 }
 
 function check1() {
@@ -39,6 +42,7 @@ function check1() {
     }
     countItog();
     checkAll()
+    changeDelivery(1);
 }
 
 function check2() {
@@ -49,6 +53,7 @@ function check2() {
     }
     countItog();
     checkAll()
+    changeDelivery(2);
 }
 
 function check3() {
@@ -59,6 +64,7 @@ function check3() {
     }
     countItog();
     checkAll()
+    changeDelivery(3);
 }
 
 function checkAll() {
@@ -80,6 +86,9 @@ function deleteItem(id) {
     const item = document.getElementById(id);
     item.parentNode.removeChild(item);
     countItog();
+    changeDelivery(1);
+    changeDelivery(2);
+    changeDelivery(3);
     return false;
 }
 
@@ -314,5 +323,144 @@ function submit() {
 
 submit();
 
+function counter(operation, counter, limit) {
+    const num = document.getElementById('item' + counter);
+    if (operation == '-') {
+        if (num.textContent == 0) {
+            return 0;
+        } else if (num.textContent == 1) {
+            num.innerHTML = parseInt(num.textContent) - 1;
+            countItog()
+            document.getElementById('minus' + counter).style.color = '#A0A0A4';
+        } else {
+            num.innerHTML = parseInt(num.textContent) - 1;
+            document.getElementById('plus' + counter).style.color = '#000000';
+            countItog()
+        }
+    } else if (operation == '+') {
+        if (num.textContent == limit) {
+            return 0;
+        } else if (num.textContent == limit - 1) {
+            num.innerHTML = parseInt(num.textContent) + 1;
+            countItog()
+            document.getElementById('plus' + counter).style.color = '#A0A0A4';
+        } else {
+            num.innerHTML = parseInt(num.textContent) + 1;
+            document.getElementById('minus' + counter).style.color = '#000000';
+            countItog()
+        }
+    }
+}
 
+function pickpointBtnClick(btn) {
+    if (btn == 'courier-btn') {
+        document.getElementById("btn0").classList.remove("selected");
+        document.getElementById("btn1").classList.add("selected");
+        document.getElementById("pickpoint").style.display = 'none';
+        document.getElementById("pickpoint").style.position = 'absolute';
+        document.getElementById("courier").style.display = 'flex';
+        document.getElementById("courier").style.position = 'relative';
+    } else if (btn == 'pickpoint-btn') {
+        document.getElementById("btn1").classList.remove("selected");
+        document.getElementById("btn0").classList.add("selected");
+        document.getElementById("courier").style.display = 'none';
+        document.getElementById("courier").style.position = 'absolute';
+        document.getElementById("pickpoint").style.display = 'flex';
+        document.getElementById("pickpoint").style.position = 'relative';
+    }
+}
 
+function makeFavorite(id) {
+    const like = document.getElementById(id);
+    if (like.classList.contains("rose")) {
+        like.classList.remove("rose");
+    } else {
+        like.classList.add("rose");
+    }
+}
+
+function editProperties() {
+    const items = document.querySelectorAll('.radio');
+    for (item of items) {
+        if (item.checked) {
+            document.getElementById('editable').parentNode.removeChild(document.getElementById('editable'));
+            document.getElementById('editable1').parentNode.removeChild(document.getElementById('editable1'));
+            let fragment = document.getElementById(item.id + '-label').cloneNode(true);
+            let fragment1 = document.getElementById(item.id + '-label').cloneNode(true);
+            fragment.id = 'editable';
+            fragment1.id = 'editable1';
+            document.getElementById('insert-here').appendChild(fragment);
+            document.getElementById('insert-here1').appendChild(fragment1);
+            location.href='#close'
+        }
+    }
+}
+
+function editDelivery() {
+    if (document.getElementById("courier").style.display == 'flex') {
+        const items = document.querySelectorAll('.radio1');
+        for (item of items) {
+            if (item.checked) {
+                document.getElementById('editable-delivery').parentNode.removeChild(document.getElementById('editable-delivery'));
+                document.getElementById('editable-delivery1').parentNode.removeChild(document.getElementById('editable-delivery1'));
+                let fragment = document.getElementById(item.id + '-label').cloneNode(true);
+                let fragment1 = document.getElementById(item.id + '-label').cloneNode(true);
+                fragment.id = 'editable-delivery';
+                fragment.classList.add("h5");
+
+                fragment1.id = 'editable-delivery1';
+                fragment1.classList.add("adress");
+                fragment1.classList.remove("h4");
+
+                document.getElementById('insert-here-delivery').prepend(fragment);
+                document.getElementById('insert-here-delivery1').prepend(fragment1);
+                document.getElementById('delivery-method').innerHTML = 'в пункт выдачи';
+                document.getElementById('delivery-method1').innerHTML = 'В пункт выдачи';
+                location.href='#close'
+            }
+        }
+    } else {
+        const items = document.querySelectorAll('.radio2');
+        for (item of items) {
+            if (item.checked) {
+                document.getElementById('editable-delivery').parentNode.removeChild(document.getElementById('editable-delivery'));
+                document.getElementById('editable-delivery1').parentNode.removeChild(document.getElementById('editable-delivery1'));
+                let fragment = document.getElementById(item.id + '-label').cloneNode(true);
+                let fragment1 = document.getElementById(item.id + '-label').cloneNode(true);
+                fragment.id = 'editable-delivery';
+                fragment.classList.add("h5");
+
+                fragment1.id = 'editable-delivery1';
+                fragment1.classList.add("adress");
+                fragment1.classList.remove("h4");
+
+                document.getElementById('insert-here-delivery').prepend(fragment);
+                document.getElementById('insert-here-delivery1').prepend(fragment1);
+                document.getElementById('delivery-method').innerHTML = 'курьером';
+                document.getElementById('delivery-method1').innerHTML = 'Курьер';
+                location.href='#close'
+            }
+        }
+    }
+}
+
+function changeDelivery(id) {
+    const products = document.querySelectorAll('#product' + id);
+    const interval = document.getElementById('products-interval');
+    const chbox = document.getElementById('ok' + (id - 1));
+    if (chbox && chbox.checked) {
+        for (product of products) {
+            product.style.display = 'flex';
+            product.style.position = 'relative';
+        } 
+        interval.classList.add("none");
+    } else {
+        for (product of products) {
+            product.style.display = 'none';
+            product.style.position = 'absolute';
+        } 
+        if ((!document.getElementById('ok').checked) && (!document.getElementById('ok').checked) && (!document.getElementById('ok').checked)) {
+            interval.classList.remove("none");
+        }
+    }
+}

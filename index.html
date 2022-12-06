@@ -92,13 +92,13 @@
                             <div class="counter-price">
                                 <div class="counter-wrapper">
                                     <div class="counter">
-                                        <button class="left"><span class="minus">−</span></button>
+                                        <button class="left" onclick="counter('-', 0)"><span class="minus" id="minus0">−</span></button>
                                         <span class="counter-num h4" id="item0">1</span>
-                                        <button class="right"><span class="plus">+</span></button>
+                                        <button class="right" onclick="counter('+', 0, 2)"><span class="plus" id="plus0">+</span></button>
                                     </div>
                                     <span class="warning">Осталось 2 шт.</span>
                                     <div class="icons">
-                                        <button class="like"/>
+                                        <button id ="like1" class="like"/ onclick="makeFavorite('like1')">
                                         <button onclick="deleteItem('one')" class="trash"/>
                                     </div>
                                 </div>
@@ -128,9 +128,9 @@
                                 </div>
                                 <div class="column">
                                     <div class="price-mob">
-                                        <span id="price-one" class="discount-price">522 сом</span>
+                                        <span id="price-one" class="discount-price">2 100 047 сом</span>
                                         <div class="hint">
-                                            <span class="original-price">1051 сом</span>
+                                            <span class="original-price">2 300 047 сом</span>
                                         </div>
                                     </div>
                                     <span class="h4">Силиконовый чехол картхолдер (отверстия) для карт, 
@@ -158,12 +158,13 @@
                             <div class="counter-price">
                                 <div class="counter-wrapper">
                                     <div class="counter">
-                                        <button class="left"><span class="minus">−</span></button>
-                                        <span class="counter-num h4" id="item1">200</span>
-                                        <button class="right"><span class="plus">+</span></button>
+                                        <button class="left" onclick="counter('-', 1)"><span class="minus" id="minus1">−</span></button>
+                                        <span class="counter-num h4" id="item1">1</span>
+                                        <button class="right" onclick="counter('+', 1, 100)"><span class="plus" id="plus1">+</span></button>
+
                                     </div>
                                     <div class="icons">
-                                        <button class="like"/>
+                                        <button id ="like2" class="like"/ onclick="makeFavorite('like2')">
                                         <button onclick="deleteItem('two')" class="trash"/>
                                     </div>
                                 </div>
@@ -193,9 +194,9 @@
                                 </div>
                                 <div class="column">
                                     <div class="price-mob">
-                                        <span id="price-one" class="discount-price">522 сом</span>
+                                        <span id="price-one" class="discount-price">494 сом</span>
                                         <div class="hint">
-                                            <span class="original-price">1051 сом</span>
+                                            <span class="original-price">950 сом</span>
                                         </div>
                                     </div>
                                     <span class="h4">Карандаши цветные Faber-Castell "Замок", 
@@ -219,13 +220,13 @@
                             <div class="counter-price">
                                 <div class="counter-wrapper">
                                     <div class="counter">
-                                        <button class="left"><span class="minus">−</span></button>
-                                        <span class="counter-num h4" id="item2">2</span>
-                                        <button class="right"><span class="plus">+</span></button>
+                                        <button class="left" onclick="counter('-', 2)"><span class="minus" id="minus2">−</span></button>
+                                        <span class="counter-num h4" id="item2">1</span>
+                                        <button class="right" onclick="counter('+', 2, 2)"><span class="plus" id="plus2">+</span></button>
                                     </div>
                                     <span class="warning">Осталось 2 шт.</span>
                                     <div class="icons">
-                                        <button class="like"/>
+                                        <button id ="like3" class="like"/ onclick="makeFavorite('like3')">
                                         <button onclick="deleteItem('three')" class="trash"/>
                                     </div>
                                 </div>
@@ -276,7 +277,7 @@
                             <div class="row space">
                                 <div class="column out-of-stock-btn">
                                     <div class="icons">
-                                        <button class="like"/>
+                                        <button id ="like4" class="like"/ onclick="makeFavorite('like4')">
                                         <button onclick="deleteItem('four')" class="trash"/>
                                     </div>
                                 </div>
@@ -288,7 +289,7 @@
                                     <img src="img/2.png" class="product bw">
                                 </div>
                                 <div class="column">
-                                    <span class=" bw-text">Силиконовый чехол картхолдер (отверстия) для карт, 
+                                    <span class="h4 bw-text">Силиконовый чехол картхолдер (отверстия) для карт, 
                                         прозрачный кейс бампер на Apple iPhone XR,
                                         MobiSafe</span>
                                     <div class="props">
@@ -299,7 +300,7 @@
                             <div class="row space">
                                 <div class="column out-of-stock-btn">
                                     <div class="icons">
-                                        <button class="like"/>
+                                        <button id ="like5" class="like"/ onclick="makeFavorite('like5')">
                                         <button onclick="deleteItem('five')" class="trash"/>
                                     </div>
                                 </div>
@@ -312,7 +313,7 @@
                                     <div class="white-rectangle">56/54/52...</div>
                                 </div>
                                 <div class="column">
-                                    <span class="name=item bw-text">Карандаши цветные Faber-Castell "Замок", 
+                                    <span class="h4 bw-text">Карандаши цветные Faber-Castell "Замок", 
                                         набор 24 цвета, заточенные, 
                                         шестигранные, Faber-Castell</span>
                                 </div>    
@@ -320,7 +321,7 @@
                             <div class="row space">
                                 <div class="column out-of-stock-btn">
                                     <div class="icons">
-                                        <button class="like"/>
+                                        <button id ="like6" class="like" onclick="makeFavorite('like6')">
                                         <button onclick="deleteItem('six')" class="trash"/>
                                     </div>
                                 </div>
@@ -335,9 +336,9 @@
                             <a href="#openEditDelivery" class="edit-delivery">Изменить</a>
                         </div>
                         <div class="editable-flex">
-                            <span class="width-delivery h3 mobile-margin">Пункт выдачи</span>
-                            <div class="column">
-                                <span class="h5">Бишкек, улица Ахматбека Суюмбаева, 12/1</span>
+                            <span id="delivery-method1" class="width-delivery h3 mobile-margin">Пункт выдачи</span>
+                            <div class="column" id="insert-here-delivery">
+                                <span class="h5" id="editable-delivery">Бишкек, улица Ахматбека Суюмбаева, 12/1</span>
                                 <div class="row">
                                     <img src="img/star.svg" alt="star">
                                     <span style="margin-right: 8px; margin-left: 4.5px">4.99</span>
@@ -349,21 +350,21 @@
                             <span class="width-delivery h3">Стоимость доставки</span>
                             <span class="h5">Бесплатно</span>
                         </div>
-                        <div class="editable-flex">
+                        <div class="editable-flex products-interval" id="products-interval">
                             <span class="width-delivery h3">5—6 февраля</span>
                             <div class="row">
-                                <img class="product-small" src="img/1.png">
-                                <div class="relative">
+                                <img class="product-small product-item" src="img/1.png" id="product1">
+                                <div class="relative product-item" id="product2">
                                     <img class="product-small relative" src="img/2.png">
                                     <div class="orange-circle long text-circle">184</div>
                                 </div>
-                                <div class="relative">
+                                <div class="relative product-item" id="product3">
                                     <img class="product-small relative" src="img/3.png">
                                     <div class="orange-circle text-circle left28">2</div>
                                 </div>
                             </div>
                         </div>
-                        <div class="editable-flex">
+                        <div class="editable-flex product-item" id="product2">
                             <span class="width-delivery h3">7—8 февраля</span>
                             <div class="row">
                                 <div class="relative">
@@ -385,18 +386,19 @@
                             </span>
                         </div>
                     </div>
-                    <div class="gray-wrapper">
+                    <div class="gray-wrapper gap16">
                         <div class="row center space">
                             <span class="delivery-label">Способ оплаты</span>
                             <a href="#openEditPayment" class="edit-delivery">Изменить</a>
                         </div>
                         <div class="column gap8">
-                            <div class="row">
-                                <div class="mir">
-                                    <img src="img/mir.svg">
-                                </div>
-                                <span class="card">1234 12•• •••• 1234</span>
-                                <span style="margin-left: 12px;">01/30</span>
+                            <div id="insert-here1">
+                                <label for="mir" id="editable1" class="row">
+                                    <div class="mir">
+                                        <img src="img/mir.svg">
+                                    </div>
+                                    <span class="h4">1234 12•• •••• 1234</span>
+                                </label>
                             </div>
                             <div>
                                 <span class="bw-text">Спишем оплату с карты при получении</span>
@@ -468,15 +470,17 @@
                     </div>
                 </div>
                 <div class="column">
-                    <div class="up-11">
-                        <span class="label-delivery">Доствка в пункт выдачи</span>
-                        <button onclick="location.href='#openEditDelivery'" class="edit"/>
-                    </div>
-                    <div class="up-11">
-                        <span class="adress">Бишкек, улица Ахматбека Суюмбаева, 12/1</span>
-                    </div>
-                    <div class="up-11">
-                        <span class="time-delivery">5–8 фев</span>
+                    <div class="delivery-div">
+                        <div class="up-11">
+                            <span class="label-delivery">Доставка <span id="delivery-method">в пункт выдачи</span></span>
+                            <button onclick="location.href='#openEditDelivery'" class="edit"/>
+                        </div>
+                        <div class="up-11" id="insert-here-delivery1">
+                            <span id="editable-delivery1" class="adress">г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1</span>
+                        </div>
+                        <div class="up-11">
+                            <span class="time-delivery">5–8 фев</span>
+                        </div>
                     </div>
                     <div class="delivery-free">
                         <img src="img/price shipping.png">
@@ -490,15 +494,19 @@
                     </div>
                 </div>
                 <div class="column">
-                    <div class="row space">
-                        <span class="label-delivery" style="margin-bottom:10px;">Оплата картой</span>
-                        <button onclick="location.href='#openEditPayment'" class="edit"/>
-                    </div>
-                    <div class="row center">
-                        <div class="mir">
-                            <img src="img/mir.svg">
+                    <div class="payment-div">
+                        <div class="row space">
+                            <span class="label-delivery" style="margin-bottom:10px;">Оплата картой</span>
+                            <button onclick="location.href='#openEditPayment'" class="edit"/>
                         </div>
-                        <span class="card">1234 12•• •••• 1234</span>
+                        <div class="row center" id="insert-here">
+                            <label for="mir" id="editable" class="row">
+                                <div class="mir">
+                                    <img src="img/mir.svg">
+                                </div>
+                                <span class="h4">1234 12•• •••• 1234</span>
+                            </label>
+                        </div>
                     </div>
                     <div class="middle-1">
                         <div class="payment">                        
@@ -549,7 +557,7 @@
                       <div class="row center">
                         <div class="form-radio">
                             <input type="radio" name="card" id="mir" class="radio" checked>
-                            <label for="mir">
+                            <label for="mir" id="mir-label" class="row">
                                 <div class="mir">
                                     <img src="img/mir.svg">
                                 </div>
@@ -560,7 +568,7 @@
                       <div class="row center">
                         <div class="form-radio">
                             <input type="radio" name="card" id="visa" class="radio" >
-                            <label for="visa">
+                            <label for="visa" id="visa-label" class="row">
                                 <div class="mir">
                                     <img src="img/visa.svg">
                                 </div>
@@ -571,7 +579,7 @@
                       <div class="row center">
                         <div class="form-radio">
                             <input type="radio" name="card" id="mastercard" class="radio" >
-                            <label for="mastercard">
+                            <label for="mastercard" id="mastercard-label" class="row">
                                 <div class="mir">
                                     <img src="img/mastercard.svg">
                                 </div>
@@ -582,7 +590,7 @@
                       <div class="row center">
                         <div class="form-radio">
                             <input type="radio" name="card" id="maestro" class="radio">
-                            <label for="maestro">
+                            <label for="maestro" id="maestro-label" class="row">
                                 <div class="mir">
                                     <img src="img/maestro.svg">
                                 </div>
@@ -591,7 +599,7 @@
                         </div>
                       </div>
                     </form>  
-                    <button type="submit" class="card-submit">
+                    <button type="submit" class="card-submit" onclick="editProperties()">
                         <span class="submit-text">Выбрать</span>
                     </button>
                 </form>  
@@ -609,43 +617,92 @@
             </div>
             <div class="modal-body">
                 <div class="row space gap8">
-                    <button class="pickpoint-btn">
+                    <button class="pickpoint-btn selected" id="btn0" onclick="pickpointBtnClick('pickpoint-btn')">
                         В пункт выдачи
                     </button>
-                    <button class="pickpoint-btn selected">
+                    <button class="pickpoint-btn" id="btn1" onclick="pickpointBtnClick('courier-btn')">
                         Курьером
                     </button>
                 </div>
                 <span class="adresses-label">Мои адреса</span>
-                <form class="column gap20">
-                    <div class="row space center">
+
+                <form class="column gap20" id="pickpoint">
+                    <div class="row space center relative" id="radio1">
                         <div class="form-radio">
-                            <input id="radio-11" type="radio" name="adress" checked>
+                            <input class="radio1" id="radio-11" type="radio" name="adress" checked>
                             <label for="radio-11"></label>
-                            <span class="h4">Бишкек, улица Табышалиева, 57</span>
+                            <div class="column">
+                                <span class="h4" id="radio-11-label">г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1</span>
+                                <div class="row">
+                                    <img src="img/star.svg" alt="star">
+                                    <span style="margin-right: 8px; margin-left: 4.5px">4.99</span>
+                                    <span class="bw-text">Пункт выдачи</span>
+                                </div>  
+                            </div>
                         </div>
-                        <img src="img/trash-gray.svg" class="trash-gray"></img>
+                        <img src="img/trash-gray.svg" class="trash-gray" onclick="deleteItem('radio1')"></img>
                     </div>
-                    <div class="row space center">
+                    <div class="row space center relative" id="radio2">
                         <div class="form-radio">
-                            <input id="radio-12" type="radio" name="adress">
+                            <input class="radio1" id="radio-12" type="radio" name="adress">
                             <label for="radio-12"></label>
-                            <span class="h4">Бишкек, улица Жукеева-Пудовкина, 77/1</span>
+                            <div class="column">
+                                <span class="h4" id="radio-12-label">г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1</span>
+                                <div class="row">
+                                    <img src="img/star.svg" alt="star">
+                                    <span style="margin-right: 8px; margin-left: 4.5px">4.99</span>
+                                    <span class="bw-text">Пункт выдачи</span>
+                                </div>  
+                            </div>
                         </div>
-                        <img src="img/trash-gray.svg" class="trash-gray"></img>
+                        <img src="img/trash-gray.svg" class="trash-gray" onclick="deleteItem('radio2')"></img>
                     </div>
-                    <div class="row space center">
+                    <div class="row space center relative" id="radio3">
                         <div class="form-radio">
-                            <input id="radio-13" type="radio" name="adress">
+                            <input class="radio1" id="radio-13" type="radio" name="adress">
                             <label for="radio-13"></label>
-                            <span class="h4">Бишкек, микрорайон Джал, улица Ахунбаева Исы, 67/1</span>
+                            <div class="column">
+                                <span class="h4" id="radio-13-label">г. Бишкек, улица Табышалиева, д. 57</span>
+                                <div class="row">
+                                    <img src="img/star.svg" alt="star">
+                                    <span style="margin-right: 8px; margin-left: 4.5px">4.99</span>
+                                    <span class="bw-text">Пункт выдачи</span>
+                                </div>  
+                            </div>
                         </div>
-                        <img src="img/trash-gray.svg" class="trash-gray"></img>
+                        <img src="img/trash-gray.svg" class="trash-gray" onclick="deleteItem('radio3')"></img>
                     </div>
-                    <button type="submit" class="card-submit">
-                        <span class="submit-text">Выбрать</span>
-                    </button>
                 </form>  
+
+                <form class="column gap20" id="courier">
+                    <div class="row space center relative" id="radio4">
+                        <div class="form-radio">
+                            <input class="radio2" id="radio-21" type="radio" name="adress" checked>
+                            <label for="radio-21"></label>
+                            <span id="radio-21-label" class="h4">Бишкек, улица Табышалиева, 57</span>
+                        </div>
+                        <img src="img/trash-gray.svg" class="trash-gray" onclick="deleteItem('radio4')"></img>
+                    </div>
+                    <div class="row space center relative" id="radio5">
+                        <div class="form-radio">
+                            <input class="radio2" id="radio-22" type="radio" name="adress">
+                            <label for="radio-22"></label>
+                            <span id="radio-22-label" class="h4">Бишкек, улица Жукеева-Пудовкина, 77/1</span>
+                        </div>
+                        <img src="img/trash-gray.svg" class="trash-gray" onclick="deleteItem('radio5')"></img>
+                    </div>
+                    <div class="row space center relative" id="radio6">
+                        <div class="form-radio">
+                            <input class="radio2" id="radio-23" type="radio" name="adress">
+                            <label for="radio-23"></label>
+                            <span id="radio-23-label" class="h4">Бишкек, микрорайон Джал, улица Ахунбаева Исы, 67/1</span>
+                        </div>
+                        <img src="img/trash-gray.svg" class="trash-gray" onclick="deleteItem('radio6')"></img>
+                    </div>
+                </form>  
+                <button type="submit" class="card-submit" onclick="editDelivery()">
+                    <span class="submit-text">Выбрать</span>
+                </button>
             </div>
           </div>
         </div>
