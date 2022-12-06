@@ -38,23 +38,33 @@ body, html {
 }
 
 .orange-circle {
-    border-radius: 100%;
+    border-radius: 30px;
     background: #F55123;
-    height: 16px;
-    width: 16px;
     position: absolute;
     top: -6px;
-    left: 21px;
+    right: 0;
     text-align: center;
     font-weight: 700;
     font-size: 10px;
     color: white;
+    padding: 1px 6px;
 }
 
-.long {
-    width: 26.36px;
-    border-radius: 16px;
-    left: 18px;
+#quantity-small {
+    display: none;
+    position: absolute;
+}
+
+#rating {
+    display: flex;
+    position: relative;
+}
+
+.cart-circle {
+    right: -7px;
+    width: 16px;
+    height: 16px;
+    padding: 0;
 }
 
 .text-circle {
@@ -278,7 +288,7 @@ body, html {
     display: flex;
     flex-direction: row;
     justify-content: space-between  ;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .one-left {
@@ -484,18 +494,10 @@ body, html {
     white-space: nowrap;
 }
 
-.left28 {
-    left: 28px;
-}
-
-.avarage {
-    width: 20px;
-}
-
 .items {
     opacity: 1;
     position: relative;
-    transition: opacity .5s;
+    display: block;
 }
 
 .gray-items {
@@ -785,7 +787,10 @@ body, html {
     display: inline-flex;
     align-items: center;
     user-select: none;
+    font-weight: 400;
+    font-size: 16px;
 }
+
 .checkbox+label::before {
     content: '';
     width: 18px;
@@ -915,7 +920,7 @@ body, html {
 }
 
 .minus {
-    color:#000000;
+    color:#A0A0A4;
 }
 
 #pickpoint {
@@ -982,6 +987,14 @@ body, html {
 
 .trash:hover {
     filter: invert(30%) sepia(100%) saturate(893%) hue-rotate(341deg) brightness(113%) contrast(103%);
+}
+
+#counter-close {
+    display: none;
+    position: absolute;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
 }
 
 .form-radio {
@@ -1415,5 +1428,9 @@ body, html {
     }
     .props {
         margin-top: 4px;
+    }
+    .checkbox+label {
+        font-weight: 400;
+        font-size: 16px;
     }
   }

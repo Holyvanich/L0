@@ -33,7 +33,7 @@
                 <div class="cart-btn pointer">
                     <div class="relative">
                         <img class="relative" src="img/cart-desc.svg">
-                        <div class="orange-circle">3</div>
+                        <div class="orange-circle cart-circle">3</div>
                     </div>
                     <span>Корзина</span>
                 </div>
@@ -46,10 +46,13 @@
                 <span class="cart-label">Корзина</span>
                     <li>
                         <div class="one">
-                            <div class="one-left">
+                            <div id="counter-close">
+                                <span><span id="count-quantity">0</span> товарa(ов) · <span id="count-sum">0</span> сом</span>
+                            </div>
+                            <div class="one-left" id="select-all">
                                 <input type="checkbox" class="checkbox" id="ok" onchange="selectAll()"><label for="ok">Выбрать все</label>
                             </div>
-                            <button onclick="hideAll()" class="close-btn"/>
+                            <button onclick="hideAll()" class="close-btn" id="close-1"/>
                         </div>
                     </li>
                     <hr class="line">
@@ -254,8 +257,8 @@
                 <ul class="list">
                     <li>
                         <div class="one">
-                            <span>Отсутствуют · 3 товара</span>
-                            <button onclick="hideAllGray()" class="close-btn"/>
+                            <span>Отсутствуют · <span id="count-missing">3</span> товара(ов)</span>
+                            <button onclick="hideAllGray()" class="close-btn" id="close-2"/>
                         </div>
                     </li>
                     <hr class="line">
@@ -338,8 +341,8 @@
                         <div class="editable-flex">
                             <span id="delivery-method1" class="width-delivery h3 mobile-margin">Пункт выдачи</span>
                             <div class="column" id="insert-here-delivery">
-                                <span class="h5" id="editable-delivery">Бишкек, улица Ахматбека Суюмбаева, 12/1</span>
-                                <div class="row">
+                                <span class="h5" id="editable-delivery">г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1</span>
+                                <div class="row" id="rating">
                                     <img src="img/star.svg" alt="star">
                                     <span style="margin-right: 8px; margin-left: 4.5px">4.99</span>
                                     <span>Ежедневно с 10 до 21 </span>
@@ -353,14 +356,17 @@
                         <div class="editable-flex products-interval" id="products-interval">
                             <span class="width-delivery h3">5—6 февраля</span>
                             <div class="row">
-                                <img class="product-small product-item" src="img/1.png" id="product1">
+                                <div class="relative product-item" id="product1">
+                                    <img class="product-small relative" src="img/1.png">
+                                    <div class="orange-circle text-circle" id="quantity-small0">2</div>
+                                </div>
                                 <div class="relative product-item" id="product2">
                                     <img class="product-small relative" src="img/2.png">
-                                    <div class="orange-circle long text-circle">184</div>
+                                    <div class="orange-circle text-circle" id="quantity-small1">2</div>
                                 </div>
                                 <div class="relative product-item" id="product3">
                                     <img class="product-small relative" src="img/3.png">
-                                    <div class="orange-circle text-circle left28">2</div>
+                                    <div class="orange-circle text-circle" id="quantity-small2">2</div>
                                 </div>
                             </div>
                         </div>
@@ -369,7 +375,7 @@
                             <div class="row">
                                 <div class="relative">
                                     <img class="product-small" src="img/2.png">
-                                    <div class="orange-circle text-circle left28 avarage">16</div>
+                                    <div class="orange-circle text-circle" id="quantity-small3">2</div>
                                 </div>
                             </div>
                         </div>
@@ -457,7 +463,7 @@
                         <span class="itog-num"><span id="itog">0</span> сом</span>
                     </div>
                     <div class="up-item">
-                        <span class="h4"><span id="quantity">0</span> товара</span>
+                        <span class="h4"><span id="quantity">0</span> товара(ов)</span>
                         <span class="h4"><span id="sum">0</span> сом</span>
                     </div>
                     <div class="up-item">
@@ -539,7 +545,7 @@
         <img class="icon-mobile" src="img/catalog.svg">
         <div class="relative">
             <img class="icon-mobile" src="img/cart.svg">
-            <div class="orange-circle text-circle">3</div>
+            <div class="orange-circle text-circle cart-circle">3</div>
         </div>
         <img class="mob-icon" src="img/Heart.svg">
         <img class="mob-icon" src="img/profile.svg">

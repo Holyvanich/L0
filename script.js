@@ -89,7 +89,14 @@ function deleteItem(id) {
     changeDelivery(1);
     changeDelivery(2);
     changeDelivery(3);
+    countMissing()
     return false;
+}
+
+function countMissing() {
+    const items = document.querySelectorAll('#gray-items .item');
+    const num = document.getElementById('count-missing');
+    num.innerHTML = items.length;
 }
 
 function payImmediatly() {
@@ -105,23 +112,35 @@ function payImmediatly() {
 
 function hideAll() {
     const items = document.getElementById('items');
-    if (items.style.opacity == '0'){
-        items.style.opacity = 1;
+    if (items.style.display == 'none'){
+        items.style.display = 'block';
         items.style.position = 'relative';
+        document.getElementById('close-1').style.background = 'url("img/close.svg") no-repeat'
+        document.getElementById('counter-close').style.display = 'none';
+        document.getElementById('counter-close').style.position = 'absolute';
+        document.getElementById('select-all').style.display = 'flex';
+        document.getElementById('select-all').style.position = 'relative';
     } else {
-        items.style.opacity = 0;
+        items.style.display = 'none';
         items.style.position = 'absolute'; 
+        document.getElementById('close-1').style.background = 'url("img/open.svg") no-repeat';
+        document.getElementById('counter-close').style.display = 'flex';
+        document.getElementById('counter-close').style.position = 'relative';
+        document.getElementById('select-all').style.display = 'none';
+        document.getElementById('select-all').style.position = 'absolute';
     }
 }
 
 function hideAllGray() {
     const items = document.getElementById('gray-items');
-    if (items.style.opacity == '0'){
-        items.style.opacity = 1;
+    if (items.style.display == 'none'){
+        items.style.display = 'block';
         items.style.position = 'relative';
+        document.getElementById('close-2').style.background = 'url("img/close.svg") no-repeat'
     } else {
-        items.style.opacity = 0;
+        items.style.display = 'none';
         items.style.position = 'absolute'; 
+        document.getElementById('close-2').style.background = 'url("img/open.svg") no-repeat'
     }
 }
 
@@ -144,16 +163,36 @@ function countItog() {
             sum += parseInt(d) * counter[i].textContent;
 
             quantity += 1 * counter[i].textContent;
+            if (i != 1) {
+                document.getElementById('quantity-small' + i).innerHTML = counter[i].textContent;
+                if (counter[i].textContent <= 1) {
+                    document.getElementById('quantity-small' + i).style.display = 'none';
+                } else {
+                    document.getElementById('quantity-small' + i).style.display = 'block';
+                }
+            } else {
+                document.getElementById('quantity-small' + i).innerHTML = Math.floor(counter[i].textContent / 2) + (counter[i].textContent % 2);
+                document.getElementById('quantity-small3').innerHTML = Math.floor(counter[i].textContent / 2);
+                if (counter[i].textContent <= 1) {
+                    document.getElementById('quantity-small' + i).style.display = 'none';
+                    document.getElementById('quantity-small3').style.display = 'none';
+                } else {
+                    document.getElementById('quantity-small' + i).style.display = 'block';
+                    document.getElementById('quantity-small3').style.display = 'block';
+                } 
+            }
         }
     }
     var parts = final_sum.toString().split(".");
     parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, " ");
     document.getElementById('itog').innerHTML = parts.join(".");
+    document.getElementById('count-sum').innerHTML = parts.join(".");
 
     var parts_sum = sum.toString().split(".");
     parts_sum[0] = parts_sum[0].replace(/\B(?=(\d{3})+(?!\d))/g, " ");
     document.getElementById('sum').innerHTML = parts_sum.join(".");
     document.getElementById('quantity').innerHTML = quantity;
+    document.getElementById('count-quantity').innerHTML = quantity;
 
     discount = sum - final_sum;
     var parts_d = discount.toString().split(".");
@@ -326,12 +365,13 @@ submit();
 function counter(operation, counter, limit) {
     const num = document.getElementById('item' + counter);
     if (operation == '-') {
-        if (num.textContent == 0) {
+        if (num.textContent == 1) {
             return 0;
-        } else if (num.textContent == 1) {
+        } else if (num.textContent == 2) {
             num.innerHTML = parseInt(num.textContent) - 1;
             countItog()
             document.getElementById('minus' + counter).style.color = '#A0A0A4';
+            document.getElementById('plus' + counter).style.color = '#000000';
         } else {
             num.innerHTML = parseInt(num.textContent) - 1;
             document.getElementById('plus' + counter).style.color = '#000000';
@@ -344,6 +384,7 @@ function counter(operation, counter, limit) {
             num.innerHTML = parseInt(num.textContent) + 1;
             countItog()
             document.getElementById('plus' + counter).style.color = '#A0A0A4';
+            document.getElementById('minus' + counter).style.color = '#000000';
         } else {
             num.innerHTML = parseInt(num.textContent) + 1;
             document.getElementById('minus' + counter).style.color = '#000000';
@@ -398,28 +439,6 @@ function editProperties() {
 
 function editDelivery() {
     if (document.getElementById("courier").style.display == 'flex') {
-        const items = document.querySelectorAll('.radio1');
-        for (item of items) {
-            if (item.checked) {
-                document.getElementById('editable-delivery').parentNode.removeChild(document.getElementById('editable-delivery'));
-                document.getElementById('editable-delivery1').parentNode.removeChild(document.getElementById('editable-delivery1'));
-                let fragment = document.getElementById(item.id + '-label').cloneNode(true);
-                let fragment1 = document.getElementById(item.id + '-label').cloneNode(true);
-                fragment.id = 'editable-delivery';
-                fragment.classList.add("h5");
-
-                fragment1.id = 'editable-delivery1';
-                fragment1.classList.add("adress");
-                fragment1.classList.remove("h4");
-
-                document.getElementById('insert-here-delivery').prepend(fragment);
-                document.getElementById('insert-here-delivery1').prepend(fragment1);
-                document.getElementById('delivery-method').innerHTML = 'в пункт выдачи';
-                document.getElementById('delivery-method1').innerHTML = 'В пункт выдачи';
-                location.href='#close'
-            }
-        }
-    } else {
         const items = document.querySelectorAll('.radio2');
         for (item of items) {
             if (item.checked) {
@@ -437,7 +456,33 @@ function editDelivery() {
                 document.getElementById('insert-here-delivery').prepend(fragment);
                 document.getElementById('insert-here-delivery1').prepend(fragment1);
                 document.getElementById('delivery-method').innerHTML = 'курьером';
-                document.getElementById('delivery-method1').innerHTML = 'Курьер';
+                document.getElementById('delivery-method1').innerHTML = 'Курьером';
+                document.getElementById("rating").style.display = 'none';
+                document.getElementById("rating").style.position = 'absolute';
+                location.href='#close'
+            }
+        }
+    } else {
+        const items = document.querySelectorAll('.radio1');
+        for (item of items) {
+            if (item.checked) {
+                document.getElementById('editable-delivery').parentNode.removeChild(document.getElementById('editable-delivery'));
+                document.getElementById('editable-delivery1').parentNode.removeChild(document.getElementById('editable-delivery1'));
+                let fragment = document.getElementById(item.id + '-label').cloneNode(true);
+                let fragment1 = document.getElementById(item.id + '-label').cloneNode(true);
+                fragment.id = 'editable-delivery';
+                fragment.classList.add("h5");
+
+                fragment1.id = 'editable-delivery1';
+                fragment1.classList.add("adress");
+                fragment1.classList.remove("h4");
+
+                document.getElementById('insert-here-delivery').prepend(fragment);
+                document.getElementById('insert-here-delivery1').prepend(fragment1);
+                document.getElementById('delivery-method').innerHTML = 'в пункт выдачи';
+                document.getElementById('delivery-method1').innerHTML = 'Пункт выдачи';
+                document.getElementById("rating").style.display = 'flex';
+                document.getElementById("rating").style.position = 'relative';
                 location.href='#close'
             }
         }
