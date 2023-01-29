@@ -1,5 +1,3 @@
-
-
 function selectAll() {
     const chbox = document.getElementById('ok');
     const chbox1 = document.getElementById('ok0');
@@ -490,15 +488,22 @@ function editDelivery() {
 }
 
 function changeDelivery(id) {
-    const products = document.querySelectorAll('#product' + id);
+    const product = document.querySelector('#product' + id);
     const interval = document.getElementById('products-interval');
     const chbox = document.getElementById('ok' + (id - 1));
+    const numOfCase = document.getElementById('item1');
+    const caseProduct = document.querySelector('.case');
     if (chbox && chbox.checked) {
-        for (product of products) {
-            product.style.display = 'flex';
-            product.style.position = 'relative';
-        } 
+        product.style.display = 'flex';
+        product.style.position = 'relative';
         interval.classList.add("none");
+        if (numOfCase.innerHTML == 1) {
+            caseProduct.style.display = 'none';
+            caseProduct.style.position = 'absolute';
+        } else {
+            caseProduct.style.display = 'flex';
+            caseProduct.style.position = 'relative';
+        }
     } else {
         for (product of products) {
             product.style.display = 'none';
@@ -509,3 +514,5 @@ function changeDelivery(id) {
         }
     }
 }
+
+selectAll();

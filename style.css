@@ -934,6 +934,11 @@ body, html {
     width: 100%;
 }
 
+.case {
+    display: flex;
+    position: relative;
+}
+
 .modal-content {
     position: relative;
     display: -webkit-box;
