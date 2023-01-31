@@ -160,7 +160,7 @@ body, html {
     right: 0;
     left: 0;
     z-index: 1;
-    height: 56px;
+    height: 57px;
     padding: 0 15px;
 }
 
@@ -186,10 +186,11 @@ body, html {
 .brend {
     text-transform: uppercase;
     font-weight: 600;
-    font-size: 24px;
+    font-size: 23px;
     line-height: 86%;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.05em;
     color: #FFFFFF;
+    white-space: nowrap;
     margin-left: -5px;
 }
 
@@ -429,10 +430,11 @@ body, html {
 
 .white-square {
     position: absolute;
+    align-items: center;
     width: 21px;
     height: 21px;
     left: 6px;
-    bottom: 4px;
+    bottom: 7px;
     background: #FFFFFF;
     border-radius: 6px;
     font-weight: 400;
@@ -464,7 +466,7 @@ body, html {
 .product-small {
     width: 40px;
     height: 56px;
-    margin-right: 8px;
+    margin-right: 9px;
 }
 
 .line {
@@ -824,7 +826,7 @@ body, html {
     margin: auto;
     align-items:center;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     background: #6725A8;
 }
 
@@ -889,7 +891,7 @@ body, html {
     height: 20px;
     border: 1px solid #adb5bd;
     border-radius: 6px;
-    margin-right: 0.7em;
+    margin-right: 0.66em;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 65% 65%;
@@ -945,6 +947,11 @@ body, html {
 
 .case {
     display: flex;
+    position: relative;
+}
+
+.cart-rose {
+    left: -3px;
     position: relative;
 }
 
@@ -1153,8 +1160,11 @@ body, html {
 
 .placeholder {
     position: absolute;
-    top: -14px;
+    top: -15px;
     display: none;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
 }
 
 .date {
@@ -1564,8 +1574,8 @@ body, html {
     }
     .gray-wrapper {
         gap: 9px;
-        margin: 0px -27px -4px -14px;
-        padding-right: 11px;
+        margin: 0px -27px -4px -12px;
+        padding-right: 13px;
         padding-left: 13px;
         padding-bottom: 26px;
     }
@@ -1590,7 +1600,7 @@ body, html {
     }
     .text-circle {
         top: -10px;
-        right: 2px;
+        right: 5px;
     }
     .one {
         margin-top: 15px;
@@ -1604,7 +1614,7 @@ body, html {
         background: #F6F6FA;
         box-shadow: none;
         border: none;
-        padding: 16px;
+        padding: 15px 15px 15px 16px;
         margin-bottom: 24px;
     }
     .cart-circle {
@@ -1613,6 +1623,7 @@ body, html {
     }
     .middle-1 {
         margin-top: 7px;
+        background: #F0ECF4;
     }
     .submit {
         margin-top: 17px;
@@ -1671,5 +1682,13 @@ body, html {
     .cost-span {
         margin-top: 9px;
         margin-bottom: 0;
+    }
+    .gray-wrapper-inputs {
+        margin-left: -13px;
+        padding-top: 13px;
+    }
+    .gray-wrapper-payment {
+        margin-left: -13px;
+        padding-top: 13px;
     }
   }
