@@ -488,29 +488,35 @@ function editDelivery() {
 }
 
 function changeDelivery(id) {
-    const product = document.querySelector('#product' + id);
+    const product = document.querySelectorAll('#product' + id);
     const interval = document.getElementById('products-interval');
     const chbox = document.getElementById('ok' + (id - 1));
     const numOfCase = document.getElementById('item1');
     const caseProduct = document.querySelector('.case');
     if (chbox && chbox.checked) {
-        product.style.display = 'flex';
-        product.style.position = 'relative';
+        for (produc of product) {
+            produc.style.display = 'flex';
+            produc.style.position = 'relative';
+        } 
         interval.classList.add("none");
-        if (numOfCase.innerHTML == 1) {
-            caseProduct.style.display = 'none';
-            caseProduct.style.position = 'absolute';
-        } else {
-            caseProduct.style.display = 'flex';
-            caseProduct.style.position = 'relative';
+        if (numOfCase) {
+            if (numOfCase.innerHTML == 1) {
+                caseProduct.style.display = 'none';
+                caseProduct.style.position = 'absolute';
+            } else {
+                caseProduct.style.display = 'flex';
+                caseProduct.style.position = 'relative';
+            }
         }
     } else {
-        for (product of products) {
-            product.style.display = 'none';
-            product.style.position = 'absolute';
-        } 
-        if ((!document.getElementById('ok0').checked) && (!document.getElementById('ok1').checked) && (!document.getElementById('ok2').checked)) {
-            interval.classList.remove("none");
+        if (typeof product !== undefined) {
+            for (produc of product) {
+                produc.style.display = 'none';
+                produc.style.position = 'absolute';
+            } 
+            if ((!document.getElementById('ok0').checked) && (!document.getElementById('ok1').checked) && (!document.getElementById('ok2').checked)) {
+                interval.classList.remove("none");
+            }  
         }
     }
 }

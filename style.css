@@ -559,6 +559,12 @@ body, html {
     position: relative;
 }
 
+#editable1 span{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+}
+
 .items {
     opacity: 1;
     position: relative;
@@ -1151,6 +1157,10 @@ body, html {
     display: none;
 }
 
+.date {
+    margin-left: 12px;
+}
+
 .hint {
     position: relative;
     border-bottom: 1px dashed #A0A0A4;
@@ -1159,6 +1169,8 @@ body, html {
 
 .hidden {
     pointer-events: none;
+    z-index: 1000;
+    width: 300px;
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -1166,8 +1178,7 @@ body, html {
     transition: 1s; 
     position: absolute;
     top: 130%;
-    left: 0px;
-    width: 250px;
+    left: -31px;
     background: #FFFFFF;
     border-radius: 8px;
     padding: 11px 16px 13px 16px;
@@ -1195,6 +1206,10 @@ body, html {
     line-height: 16px;
 }
 
+#insert-here-delivery {
+    width: 70%;
+}
+
 .hidden-free {
     top: 167%;
     width: 288px;
@@ -1203,7 +1218,6 @@ body, html {
 
 .hidden-free-cart {
     top: 140%;
-    width: 288px;
 }
 
 .counter-wrapper {
@@ -1320,6 +1334,7 @@ body, html {
     }
     .hidden-free-cart {
         left: 180px;
+        width: 260px;
     }
 }
 
@@ -1440,6 +1455,9 @@ body, html {
     .left-content {
         width: auto;
         margin-bottom: 1px;
+    }
+    #insert-here-delivery {
+        width: 100%;
     }
     .product {
         width: 80px;
@@ -1640,11 +1658,6 @@ body, html {
     }
     .close-btn {
         margin-right: -7px; 
-    }
-    #editable1 span{
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 24px;
     }
     .date {
         margin-left: 12px;
