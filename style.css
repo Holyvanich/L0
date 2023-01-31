@@ -588,6 +588,8 @@ body, html {
 }
 
 .order-wrapper {
+    position: sticky;
+    top: 14px;
     background: #FFFFFF;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15), 0px 0px 1px rgba(0, 0, 0, 0.3);
     border-radius: 16px;
@@ -957,7 +959,8 @@ body, html {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     border-radius: 16px;
     outline: 0;
-    padding: 12px 24px 24px 24px;
+    margin-top: -59px;
+    padding: 15px 24px 24px 24px;
 }
 
 @media (min-width: 768px) {
@@ -1037,7 +1040,7 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 139px;
+    margin-top: 56px;   
     cursor: pointer;
     border: none;
 }
@@ -1111,7 +1114,7 @@ body, html {
     height: 15px;
     border: 1px solid #adb5bd;
     border-radius: 100%;
-    margin-right: 0.5em;
+    margin-right: 0.7em;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 50% 50%;
@@ -1354,13 +1357,15 @@ body, html {
         margin: 0; 
     }
     .modal-content {
-        padding: 28px;
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-top: 17px;
         height: 100%;
         margin: 0;
         border-radius: 0; 
     }
     .modal-header {
-        margin-bottom: 20px;
+        margin-bottom: 15px;
     }
     .tshirt-span {
         white-space: nowrap;
@@ -1368,18 +1373,21 @@ body, html {
     .card-submit {
       width: 100%;
       position: absolute;
-      bottom: 45px;
-      height: 65px;
+      bottom: 35px;
+      height: 45px;
       border-radius: 20px;
     }
     .modal-title {
         font-weight: 600;
-        font-size: 22px;
+        font-size: 20px;
         line-height: 28px;
     }
     .close img {
         width: 20px;
         height: 20px;
+    }
+    .close {
+        margin-right: -3px;
     }
     .mobile-margin-bottom{
         margin-bottom: 18px;
@@ -1388,9 +1396,12 @@ body, html {
         flex-direction: column;
         gap: 45px;
     }
+    .form-radio label {
+        align-items: center;
+    }
     .form-radio label:before {
-        width: 20px;
-        height: 20px;
+        width: 16px;
+        height: 16px;
         margin-top: 0;
     }
     .modal-delivery .form-radio .h4 {
@@ -1398,12 +1409,7 @@ body, html {
         margin-right: 5px;
     }
     .form-radio .mir {
-        margin-left: 10px;
         margin-right: 5px;
-        padding: 0 4px;
-    }
-    .form-radio .mir img {
-        width: 50px;
     }
     .modal-delivery {
         max-width: 100%;
@@ -1506,6 +1512,11 @@ body, html {
     }
     .out-of-stock-btn {
         margin: 3px -8px 0 0;
+    }
+    .span-card-number {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
     }
     .wrappers {
         margin-top: 4px;
