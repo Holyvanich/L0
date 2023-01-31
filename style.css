@@ -1218,6 +1218,7 @@ body, html {
 
 .hidden-free-cart {
     top: 140%;
+    width: auto;
 }
 
 .counter-wrapper {
@@ -1421,7 +1422,7 @@ body, html {
     }
     .modal-delivery .form-radio .h4 {
         font-size: 17px;
-        margin-right: 5px;
+        margin-right: 20px;
     }
     .form-radio .mir {
         margin-right: 5px;
